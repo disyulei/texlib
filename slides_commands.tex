@@ -1,0 +1,81 @@
+
+% ==========================================================
+%               Self-defined pgf functions
+%  
+%   Author      : Bei Yu
+%   Last Update : 05/2014
+% ==========================================================
+
+\definecolor{UtdaOrange}{RGB}{244,106,18}  %F47012
+\definecolor{UtdaBlue}  {RGB}{0,111,190}   %006FBE
+
+% ============================================ 
+%           Show all positions
+% ============================================ 
+\newcommand{\showCoordinate}
+{{
+    \color{blue!74}
+    \pgfrect[stroke]{\pgfxy(1,1)}{\pgfxy(1,1)}
+    \pgfrect[stroke]{\pgfxy(2,2)}{\pgfxy(1,1)}
+    \pgfrect[stroke]{\pgfxy(3,3)}{\pgfxy(1,1)}
+    \pgfrect[stroke]{\pgfxy(4,4)}{\pgfxy(1,1)}
+    \pgfrect[stroke]{\pgfxy(5,1)}{\pgfxy(1,1)}
+    \pgfrect[stroke]{\pgfxy(6,2)}{\pgfxy(1,1)}
+    \pgfrect[stroke]{\pgfxy(7,3)}{\pgfxy(1,1)}
+    \pgfrect[stroke]{\pgfxy(8,4)}{\pgfxy(1,1)}
+}}
+
+
+% ============================================ 
+%              Rectangle Box
+% ============================================ 
+% Example:  \myrect{\pgfxy(1,1)}{\pgfxy(2,3)}
+\newcommand{\myrect}[2]
+{
+  {
+     \color{UtdaOrange}        % set boader color
+     \pgfsetlinewidth{2pt}     % set boader width
+     \pgfrect[stroke]{#1}{#2}
+     \color{structure}         % set boader color
+   }
+}
+
+
+% ============================================ 
+%                 texting
+% ============================================ 
+% Draw red (orange) color text
+% Example:  \myredtext{\pgfxy(1,1)}{text to print}
+\newcommand{\myredtext}[2]
+{
+     \pgfputat{#1}
+     {
+         \pgfbox[center,base]
+         {\color{UtdaOrange}#2}
+     }
+}
+% Draw blue color text
+\newcommand{\mybluetext}[2]
+{
+     \pgfputat{#1}
+     {
+         \pgfbox[center,base]{\structure{#2}}
+     }
+}
+\newcommand{\mytext}[2]{\myredtext{#1}{#2}}
+
+
+% ============================================ 
+%             Connecting Arrow
+% ============================================ 
+\newcommand{\smallconnect}[4]{%
+   \pgfsetlinewidth{1.5pt}%
+   %\color{structure}%
+   \color{orange}
+   %\color{blue!70}
+   \pgfsetendarrow{\pgfarrowto}
+   \pgfnodeconncurve{#1}{#2}{#3}{#4}{1cm}{1cm}%
+   \color{structure}
+}
+
+

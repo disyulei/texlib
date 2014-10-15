@@ -1,0 +1,74 @@
+% ============================================================
+%             Beamer poster setting file
+%
+%   Author      : Bei Yu
+%   last Update : 06/2014
+% ============================================================
+
+% additional settings
+\setbeamerfont{itemize}{size=\normalsize}
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+
+
+% block width setting
+\newenvironment<>{varblock}[2][\textwidth]{%
+  \setlength{\textwidth}{#1}
+  \setbeamercolor{block title}{fg=white,bg=blue!20!green}
+  %\setbeamercolor{block body}{fg=black,bg=olive!50}
+  \setbeamercolor{block body}{fg=black,bg=blue!10}
+  \begin{actionenv}#3%
+  \def\insertblocktitle{#2}%
+  \par%
+  \usebeamertemplate{block begin}}
+  {
+    \par%
+    \usebeamertemplate{block end}%
+    \end{actionenv}
+  }
+
+
+% abbreviations
+\usepackage{xspace}
+\makeatletter
+\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+\def\eg{{e.g}\onedot} \def\Eg{{E.g}\onedot}
+\def\ie{{i.e}\onedot} \def\Ie{{I.e}\onedot}
+\def\cf{{c.f}\onedot} \def\Cf{{C.f}\onedot}
+\def\etc{{etc}\onedot}
+\def\vs{{vs}\onedot}
+\def\wrt{w.r.t\onedot}
+\def\dof{d.o.f\onedot}
+\def\etal{{et al}\onedot}
+\makeatother
+
+
+% === including packages
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{times}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage{exscale}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{comment}
+\usepackage{booktabs, array}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[orientation=landscape,size=custom,width=200,height=230,scale=1.9]{beamerposter}
+\listfiles
+
+% =====  algorithm setting
+%\usepackage[noend]{algpseudocode}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+%\renewcommand{\algorithmicrequire}{\textbf{Input:}}  % Use Input in the format of Algorithm
+%\renewcommand{\algorithmicensure}{\textbf{Output:}} % Use Output in the format of Algorithm
+
+% ==== Log
+%
+%  05/2014: preliminary results show that pgf library is NOT good for poster
+%
+

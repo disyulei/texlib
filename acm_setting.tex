@@ -1,0 +1,103 @@
+% =============================================================
+%            settign for ACM format paper
+%
+%   Author      : Bei Yu
+%   Last Update : 10/2014
+% =============================================================
+
+% =====  including package
+\usepackage{subfigure}
+\usepackage{graphicx}
+%\usepackage{cite}
+\usepackage{authblk}        % redefine \author command
+\usepackage{threeparttable}
+\usepackage{ntheorem}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{comment}
+\usepackage{bm}             % bold math font
+
+
+% =====  algorithm setting
+%\usepackage[noend]{algpseudocode}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}  % Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{\textbf{Output:}} % Use Output in the format of Algorithm
+
+
+%theorem
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}\theorembodyfont{\slshape}
+\theoremsymbol{\ensuremath{\diamondsuit}} \theoremseparator{:}
+\newtheorem{mytheorem}{Theorem}
+
+
+% problem
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\clubsuit}}
+\theoremseparator{.}
+\newtheorem{myproblem}{Problem}
+
+% metric
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\clubsuit}}
+\theoremseparator{.}
+\newtheorem{mymetric}{Metric}
+
+
+%definition
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\clubsuit}}
+\theoremseparator{.}
+\newtheorem{mydefinition}{Definition}
+
+%lemma
+%\theoremstyle{changebreak}
+\theoremsymbol{\ensuremath{\heartsuit}}
+%\theoremindent0.5cm
+%\theoremnumbering{greek}
+\newtheorem{mylemma}{Lemma}
+
+%proof
+\theoremheaderfont{\sc}\theorembodyfont{\upshape}
+\theoremstyle{nonumberplain} \theoremseparator{}
+\theoremsymbol{\rule{1ex}{1ex}}
+\newtheorem{myproof}{Proof}
+
+%example
+\theoremstyle{change}
+\theorembodyfont{\upshape}
+\theoremsymbol{\ensuremath{\ast}}
+\theoremseparator{}
+\newtheorem{myxample}{Example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Setting to control figure placement
+% These determine the rules used to place floating objects like figures
+% They are only guides, but read the manual to see the effect of each.
+%\renewcommand{\topfraction}{1.9}
+%\renewcommand{\bottomfraction}{1.9}
+%\renewcommand{\textfraction}{.1}
+%
+
+
+\makeatletter
+\def\bstctlcite{\@ifnextchar[{\@bstctlcite}{\@bstctlcite[@auxout]}}
+\def\@bstctlcite[#1]#2{\@bsphack
+  \@for\@citeb:=#2\do{%
+    \edef\@citeb{\expandafter\@firstofone\@citeb}%
+    \if@filesw\immediate\write\csname #1\endcsname{\string\citation{\@citeb}}\fi}%
+  \@esphack}
+\makeatother
+
+
+% ==== Log
+%
+%  10/2014: add package "authblk" & "bm"
+%
+%  10/2014: add "bstctlcite"
+%
+%  06/2014: forbid package "cite", check why!
+
+

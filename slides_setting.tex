@@ -1,0 +1,121 @@
+
+% ===============================================
+%          beamer slides setting
+%
+%   Author      : Bei Yu
+%   Last Update : 05/2014
+% ===============================================
+
+%\mode<article> % only for the article version
+%{
+%  \usepackage{fullpage}
+%  \usepackage{hyperref}
+%}
+
+% block width setting
+\newenvironment<>{varblock}[2][\textwidth]{%
+  \setlength{\textwidth}{#1}
+  \setbeamercolor{block title}{fg=white,bg=blue!40!green}
+  %\setbeamercolor{block body}{fg=black,bg=olive!50}
+  \setbeamercolor{block body}{fg=black,bg=blue!10}
+  \begin{actionenv}#3%
+  \def\insertblocktitle{#2}%
+  \par%
+  \usebeamertemplate{block begin}}
+  {
+    \par%
+    \usebeamertemplate{block end}%
+    \end{actionenv}
+  }
+
+
+% ======================================================
+%             Slides theme
+% ======================================================
+\mode<presentation> {
+  % === background
+  %\setbeamertemplate{background canvas}[vertical shading][bottom=red!10,top=blue!10]
+
+  % === setting theme
+  %\usetheme{Pittsburgh}
+  %\usetheme{Warsaw}         % most complex header
+  \usetheme{default}        % only header line
+  %\usetheme{Madrid}         % header line and bxottom line
+  %\usetheme{AnnArbor}       % simple outline
+  %\usefonttheme[onlysmall]{structurebold}
+}
+
+
+% =========================================================
+%               Color theme
+% =========================================================
+%\usecolortheme{wolverine}      % yellow + orange
+%\usecolortheme{crane}          % all orange
+%\usecolortheme{seahorse}       % blue + grey
+\usecolortheme{rose}           % default blue
+%\usecolortheme{default}
+
+
+% ==================================================
+%              Corner logo
+% ==================================================
+\pgfdeclareimage[width=1cm]{logo}{./figs/logo_utda}
+\logo{\vbox{
+\hbox to 1cm{
+ \hfil\pgfuseimage{logo}}
+  %\vskip0.1cm
+  %\hbox{\pgfuseimage{ur-logo}}
+  }
+}
+
+
+% =============================================
+%            Specify colors
+% =============================================
+\definecolor{UTDAorange}{RGB}{244,106,18} %F47012
+\definecolor{UTDAblue}{RGB}{0,111,190}    %006FBE
+\setbeamercolor{structure}{fg=UTDAblue}
+\setbeamercolor{alerted text}{fg=UTDAorange}
+
+
+
+% =========================================================
+%               Showing page number
+% =========================================================
+\iftrue
+\defbeamertemplate*{footline}{shadow theme}
+{
+  \leavevmode
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}
+    \usebeamerfont{author in head/foot}\insertframenumber\,/\,\inserttotalframenumber\hfill\insertshortauthor
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}}
+  \vskip0pt
+}
+\fi
+
+\usepackage{bm}
+\usepackage{algpseudocode}                % for algorithm
+\usepackage{algorithm}
+\usepackage{pgfpages}                     % allow note printing
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+%\usepackage{amsmath,amssymb}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{wasysym}        % smiling face
+
+
+%\setbeamercovered{dynamic}
+%\beamertemplateshadingbackground{white}{white}
+
+% ==== Log
+%  05/2014: new varblock definition
+%           package{wasysym} to show smiling face
+
+
