@@ -2,7 +2,7 @@
 %            settign for IEEE format paper
 %
 %   Author      : Bei Yu
-%   Last Update : 10/2014
+%   Last Update : 11/2014
 % =============================================================
 
 
@@ -18,8 +18,12 @@
 \usepackage{color}
 \usepackage{cite}             % more citations in one bracket
 \usepackage{comment}          % use comment
-\usepackage{soul}             % use highlight command \hl{}
 \usepackage{authblk}          % redefine \author command
+\usepackage{soul}             % use highlight command \hl{}
+\soulregister\cite7
+\soulregister\ref7
+\soulregister\pageref7
+\usepackage{amsthm}
 
 
 \newtheorem{myproblem}{\textbf{Problem}}
@@ -42,6 +46,7 @@
 
 % ==== Logs:
 %
+%  11/2014: \solregister, to support highlight to mybox, definition, and citations
 %  10/2014: add package "authblk" & "bm"
 %  09/2014: "problem" => "myproblem"
 %  07/2014: introduce \Statex[] for lone algorithmic statement
