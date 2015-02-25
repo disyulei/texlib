@@ -57,16 +57,24 @@
 
 
 % ==================================================
+%         Corner logo on title page
+% ==================================================
+\titlegraphic{
+    \hspace{8cm}
+    \includegraphics[width=1cm]{./figs/logo_utda}
+}
+
+% ==================================================
 %              Corner logo
 % ==================================================
-\pgfdeclareimage[width=1cm]{logo}{./figs/logo_utda}
-\logo{\vbox{
-\hbox to 1cm{
- \hfil\pgfuseimage{logo}}
-  %\vskip0.1cm
-  %\hbox{\pgfuseimage{ur-logo}}
-  }
-}
+%\pgfdeclareimage[width=1cm]{logo}{./figs/logo_utda}
+%\logo{\vbox{
+%\hbox to 1cm{
+% \hfil\pgfuseimage{logo}}
+%  %\vskip0.1cm
+%  %\hbox{\pgfuseimage{ur-logo}}
+%  }
+%}
 
 
 % =============================================
@@ -74,6 +82,7 @@
 % =============================================
 \definecolor{UTDAorange}{RGB}{244,106,18} %F47012
 \definecolor{UTDAblue}{RGB}{0,111,190}    %006FBE
+\definecolor{UTDAgreen}{RGB}{0,127,128}   %007F80
 \setbeamercolor{structure}{fg=UTDAblue}
 \setbeamercolor{alerted text}{fg=UTDAorange}
 
@@ -109,6 +118,7 @@
 \usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage{wasysym}                      % smiling face
+\usepackage{animate}                      % animation 
 \usefonttheme[onlymath]{serif}            % 
 
 
