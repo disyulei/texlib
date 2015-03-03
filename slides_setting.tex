@@ -3,8 +3,27 @@
 %          beamer slides setting
 %
 %   Author      : Bei Yu
-%   Last Update : 10/2014
+%   Last Update : 03/2015
 % ===============================================
+
+% ==== packages
+\usepackage{bm}
+\usepackage{algpseudocode}           % for algorithm
+\usepackage{algorithm}
+\usepackage{pgfpages}                % allow note printing
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+%\usepackage{amsmath,amssymb}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{wasysym}                 % smiling face
+\usepackage{animate}                 % animation 
+\usefonttheme[onlymath]{serif}       % 
+\usepackage{etoolbox}                % commands \newtoggle, \toggletrue, \iftoggle
+
 
 %\mode<article> % only for the article version
 %{
@@ -56,6 +75,27 @@
 %\usecolortheme{default}
 
 
+% ==================================================
+%         Corner logo on title page
+% ==================================================
+\titlegraphic{
+    \hspace{8cm}
+    %\includegraphics[width=1cm]{./figs/logo_utda}
+    \includegraphics[width=1cm]{./figs/logo_utece}
+}
+
+% ==================================================
+%              Corner logo
+% ==================================================
+%\pgfdeclareimage[width=1cm]{logo}{./figs/logo_utda}
+%\logo{\vbox{
+%\hbox to 1cm{
+% \hfil\pgfuseimage{logo}}
+%  %\vskip0.1cm
+%  %\hbox{\pgfuseimage{ur-logo}}
+%  }
+%}
+
 
 % =============================================
 %            Specify colors
@@ -86,23 +126,6 @@
 }
 \fi
 
-\usepackage{bm}
-\usepackage{algpseudocode}                % for algorithm
-\usepackage{algorithm}
-\usepackage{pgfpages}                     % allow note printing
-\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
-%\usepackage{amsmath,amssymb}
-\usepackage{amsmath}
-\usepackage{times}
-\usepackage{multirow}
-\usepackage{subfigure}
-\usepackage{graphicx}
-\usepackage[english]{babel}
-\usepackage{wasysym}                      % smiling face
-\usepackage{animate}                      % animation 
-\usefonttheme[onlymath]{serif}            % 
-
-
 %\setbeamercovered{dynamic}
 %\beamertemplateshadingbackground{white}{white}
 
@@ -111,5 +134,7 @@
 %  05/2014: new varblock definition;  package{wasysym} to show smiling face
 %  02/2015: no corner logo in main pages
 %  03/2015: no logo settings in library file, move to local specific tex file 
+%  03/2015: package{etoolbox}
+%  
 
 
