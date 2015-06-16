@@ -1,0 +1,61 @@
+
+%set paper size
+\if@compatibility\else
+\DeclareOption{letter}{
+% official paper size of ASP-DAC 2015
+\special{papersize=8.5in,11in}
+\topmargin      14.7mm    %bottom margin 14.7mm
+\oddsidemargin  17.45mm   %left & right margin 17.45mm
+}
+\DeclareOption{a4}{
+% use only for your local printer
+\special{papersize=210mm,297mm}
+\topmargin      23.5mm    %bottom margin 23.5mm
+\oddsidemargin  14.5mm    %left & right margin 14.5mm
+}
+\ProcessOptions
+\fi
+
+%text sizes (Keep these values unchanged!)
+\textwidth  181mm
+\textheight 250mm
+\columnsep  5.0mm
+\parindent  3.5mm
+
+%misc parameters
+\headsep 0mm  \headheight 0mm
+%\footskip 18mm
+%\footheight 6mm
+
+%conversion to values for LaTeX
+\advance\topmargin-1in\advance\oddsidemargin-1in
+\evensidemargin\oddsidemargin
+
+%as Latex considers descenders in its calculation of interline spacing,
+%to get 12 point spacing for normalsize text, must set it to 10 points
+\def\@normalsize{\@setsize\normalsize{12pt}\xpt\@xpt
+\abovedisplayskip 10pt plus2pt minus5pt\belowdisplayskip \abovedisplayskip
+\abovedisplayshortskip \z@ plus3pt\belowdisplayshortskip 6pt plus3pt
+minus3pt\let\@listi\@listI}
+
+%interline spaceing and title font for section
+\def\section{\@startsection {section}{1}{\z@}{20pt plus 2pt minus 2pt}
+{8pt plus 2pt minus 2pt}{\centering\normalsize\sc
+\edef\@svsec{\thesection.\ }}}
+\def\thesection{\Roman{section}}
+
+%interline spacing and title font for subsection
+\def\subsection{\@startsection {subsection}{2}{\z@}{16pt plus 2pt minus 2pt}
+{6pt plus 2pt minus 2pt}{\normalsize\sl
+\edef\@svsec{\thesubsection.\ }}}
+\def\thesubsection{\Alph{subsection}}
+
+%figures/tables captions
+\long\def\@makecaption#1#2{
+\vskip10pt\begin{center} #1 #2 \end{center}\par\vskip 1pt}
+\def\fnum@figure{\raggedright{\footnotesize Fig. \thefigure }.%
+\footnotesize}
+\def\fnum@table{\footnotesize TABLE \thetable\\\footnotesize\sc}
+\def\thetable{\Roman{table}}
+
+\pagestyle{empty}
