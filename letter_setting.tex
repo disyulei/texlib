@@ -1,0 +1,115 @@
+% ===============================================================
+%            LaTeX Setting for IEEE Newsletter
+%
+%    Author  :  Bei Yu@CUHK
+%    Email   :  byu@cse.cuhk.edu.hk
+%    Updated :  Oct. 2015
+%
+% ===============================================================
+
+\setlength\topmargin{-48pt}      % Top margin
+\setlength\headheight{0pt}       % Header height
+\setlength\textwidth{7.0in}      % Text width
+\setlength\textheight{9.5in}     % Text height
+\setlength\oddsidemargin{-30pt}  % Left margin
+\setlength\evensidemargin{-30pt} % Left margin (even pages) - only relevant with 'twoside' article option
+\frenchspacing % Reduces space after periods to make text more compact for a three-column layout
+
+\usepackage{caption}         %
+\usepackage{charter}         % Charter font for main content
+\usepackage{graphicx}        % Required for including images
+\usepackage{amssymb,amsmath} % Math packages
+\usepackage{multicol}        % Required for the three-column layout of the document
+\usepackage{url}             % Clickable links
+\usepackage{enumitem}        % Reduces the amount of space within and between lists with [noitemsep,nolistsep]
+\usepackage{marvosym}        % Required for the use of symbols
+\usepackage{wrapfig}         % Allows wrapping text around figures
+\usepackage[T1]{fontenc}     % Use 8-bit encoding that has 256 glyphs
+\usepackage{mathptmx}        % to use Times font
+\usepackage{datetime}        % Required for defining a custom date style
+\usepackage{fancyhdr}        % Required to define custom headers/footers
+\pagestyle{fancy}            % Enables the custom headers/footers for all pages following this
+\newdateformat{mydate}{\monthname[\THEMONTH] \THEYEAR}          % Set a custom date format
+\usepackage[pdfpagemode=FullScreen, colorlinks=false]{hyperref} % Link colors and PDF behavior in Acrobat
+
+
+% =====================================================
+%              Header and footer
+% =====================================================
+\lfoot{}   % empty Left footer
+% center footer
+\cfoot{\footnotesize 
+\Mundus\ \href{http://www.ieee-cps.org/}{ieee-cps.org}}
+\rfoot{\footnotesize Page \thepage}  % Right footer - page counter
+\renewcommand{\headrulewidth}{0.0pt} % No horizontal rule for the header
+\renewcommand{\footrulewidth}{0.4pt} % Horizontal rule separating the footer from the document
+\fancyhead{}                         % NO Header
+
+
+%-----------------------------------------------------------
+% Creates a horizontal rule
+\newcommand{\HorRule}[1]{\noindent\rule{\linewidth}{#1}}
+% Creates a shorter separator rule
+\newcommand{\SepRule}
+{
+    \noindent
+    \begin{center}
+    \rule{250pt}{1pt}      % Page width and rule width
+    \end{center}
+}
+
+
+% ================================================
+%       Define title and article styles
+% ================================================
+% ==== Newsletter title
+\newcommand{\LetterTitle}[1]
+{
+    \begin{center}
+    \usefont{T1}{ptm}{b}{n}  % Use the Bera Sans Bold font
+    \Huge #1
+    \end{center}	
+    \par \normalsize \normalfont
+    \HorRule{3pt}
+}
+
+% ==== Print Letter Header
+% ==== Input: 1) Volume num, 2) Issue numbers, 3) Date 
+\newcommand{\LetterHeader}[3]
+{
+    \hfill \textsc{Volume #1, Issue #2, #3}  % Right-aligned date and issue number
+    \par \normalsize \normalfont
+}
+
+% ==== section title
+\newcommand{\SectionTitle}[1]
+{
+    \HorRule{1pt}
+    \usefont{T1}{ptm}{b}{n}               % Use Times New Roman Bold font
+    \vspace{3pt}\Large #1\vspace{1pt}    % Print the title with space around it in a larger font size
+    \par \normalsize \normalfont
+    \HorRule{1pt}
+}
+
+% ==== article title
+\newcommand{\NewsTitle}[1]
+{
+    \begin{center}
+    %\usefont{T1}{fvs}{b}{n}              % Use Bera Sans Normal font
+    \usefont{T1}{ptm}{b}{n}               % Use Times New Roman Bold font
+    \vspace{14pt}\Large #1\vspace{1pt}    % Print the title with space around it in a larger font size
+    \par \normalsize \normalfont
+    \end{center}
+}
+
+% ==== article authors
+\newcommand{\NewsAuthor}[1]
+{
+    \begin{center}
+    %\hfill by \textsc{#1} \vspace{20pt} % Right-aligned author name in small caps with space after it
+    \usefont{T1}{ptm}{n}{n}               % Use Times New Roman Bold font
+    \textsc{#1} \vspace{4pt} % author name in small caps with space after it
+    \par \normalfont
+    \end{center}
+}
+
