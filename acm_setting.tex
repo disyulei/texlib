@@ -2,14 +2,13 @@
 %            settign for ACM format paper
 %
 %   Author      : Bei Yu
-%   Last Update : 12/2014
+%   Last Update : 11/2015
 % =============================================================
 
 % =====  including package
-\usepackage{subfigure}
+%\usepackage{subfigure}
+\usepackage[farskip=0pt,justification=centering]{subfig}
 \usepackage{graphicx}
-%\usepackage{cite}
-%\usepackage[auth-lg]{authblk}        % large author names
 \usepackage{threeparttable}
 \usepackage{ntheorem}
 \usepackage{color}
@@ -21,7 +20,9 @@
 \usepackage{url}
 \usepackage{nth}                     % nth command
 \usepackage{cite}
-
+\usepackage{flushend}
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
 
 % =====  algorithm setting
 %\usepackage[noend]{algpseudocode}
@@ -108,9 +109,14 @@
   \@esphack}
 \makeatother
 
+\makeatletter
+ \let\@copyrightspace\relax
+\makeatother
+
 
 % ==== Log
 %
+%  11/2015: use 'subfloat', instead of 'subfigure'
 %  12/2014: nth package
 %  11/2014: add newtheorem "myapplication"
 %  11/2014: add package "etoolbox"
