@@ -42,8 +42,18 @@
 {0pt}{0.6\baselineskip}{0.1\baselineskip}
 
 
+% ==== keywords
+%\def\absfont{\normalfont\footnotesize}
+\def\absfont{\normalfont\normalsize}
+\def\keywords#1{
+\par\vspace{1.3ex}{\noindent\absfont\bf Keywords: }{\absfont #1. }
+\vspace{1.1ex}   %% provide extra space before first section
+}
+
+
 % ==== Logs:
 %
+%  11/2015: keywords setting
 %  10/2015: initial setting
 %
 
