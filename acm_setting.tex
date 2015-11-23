@@ -7,7 +7,7 @@
 
 % =====  including package
 %\usepackage[subrefformat=parens,farskip=0pt,justification=centering]{subfig}
-\usepackage{subfigure}
+\usepackage[tight]{subfigure}
 \usepackage{graphicx}
 \usepackage{threeparttable}
 \usepackage{ntheorem}
@@ -15,22 +15,24 @@
 \usepackage{multirow}
 \usepackage{amsmath}
 \usepackage{comment}
-\usepackage{bm}                      % bold math font
-\usepackage{etoolbox}                % commands \newtoggle, \toggletrue, \iftoggle
+\usepackage{bm}                                           % bold math font
+\usepackage{etoolbox}                                     % \newtoggle, \toggletrue, \iftoggle
 \usepackage{url}
-\usepackage{nth}                     % nth command
+\usepackage{nth}
 \usepackage{cite}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{balance} 
 \setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setlength{\textfloatsep}{10.0pt plus 1.0pt minus 2.0pt}  % set space between float and text
+\usepackage[font=small,labelfont=bf,skip=1pt]{caption}    % set space between figure and caption
 
 % =====  algorithm setting
 %\usepackage[noend]{algpseudocode}
 \usepackage[]{algpseudocode}
 \usepackage{algorithm}
-\renewcommand{\algorithmicrequire}{\textbf{Input:}}  % Use Input in the format of Algorithm
-\renewcommand{\algorithmicensure}{\textbf{Output:}}  % Use Output in the format of Algorithm
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}       % Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{\textbf{Output:}}       % Use Output in the format of Algorithm
 
 
 %theorem
