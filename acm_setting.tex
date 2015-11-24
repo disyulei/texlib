@@ -5,9 +5,22 @@
 %   Last Update : 11/2015
 % =============================================================
 
-% =====  including package
-\setlength{\textfloatsep}{10.0pt plus 1.0pt minus 2.0pt}  % set space between float and text
-\usepackage[font=small,labelfont=bf,skip=2pt]{caption}    % set space between figure and caption
+
+% =============================================================
+%                    page size setting
+% =============================================================
+\paperwidth   = 8.5in                                      % US Letter
+\paperheight  = 11.0in
+%\paperwidth  = 8.26in                                     % A4
+%\paperheight = 11.69in
+\usepackage[top=0.6in,bottom=0.6in,left=0.55in,right=0.55in]{geometry}
+
+
+% =============================================================
+%                    including package
+% =============================================================
+\setlength{\textfloatsep}{10.0pt plus 1.0pt minus 2.0pt}   % set space between float and text
+\usepackage[font=small,labelfont=bf,skip=2pt]{caption}     % set space between figure and caption
 \usepackage[subrefformat=parens,font=small,labelfont=sf,farskip=0pt,justification=centering]{subfig}
 \usepackage{graphicx}
 \usepackage{threeparttable}
@@ -16,30 +29,35 @@
 \usepackage{multirow}
 \usepackage{amsmath}
 \usepackage{comment}
-\usepackage{bm}                                           % bold math font
-\usepackage{etoolbox}                                     % \newtoggle, \toggletrue, \iftoggle
+\usepackage{bm}                                            % bold math font
+\usepackage{etoolbox}                                      % \newtoggle, \toggletrue, \iftoggle
 \usepackage{url}
 \usepackage{nth}
 \usepackage{cite}
 \usepackage{enumitem}
-\usepackage{hyperref}
 \usepackage{balance} 
 \setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
-
-% =====  algorithm setting
+\usepackage{hyperref}                                      %
+\hypersetup{
+    colorlinks = true,
+    citecolor  = blue,
+    linkcolor  = blue
+}
+\usepackage[]{algpseudocode}                               % algorithm package
 %\usepackage[noend]{algpseudocode}
-\usepackage[]{algpseudocode}
 \usepackage{algorithm}
-\renewcommand{\algorithmicrequire}{\textbf{Input:}}       % Use Input in the format of Algorithm
-\renewcommand{\algorithmicensure}{\textbf{Output:}}       % Use Output in the format of Algorithm
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}        % Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{\textbf{Output:}}        % Use Output in the format of Algorithm
 
 
+% =============================================================
+%                   Theorem Definitions 
+% =============================================================
 %theorem
 \theoremstyle{plain}
 \theoremheaderfont{\normalfont\bfseries}\theorembodyfont{\slshape}
 \theoremsymbol{\ensuremath{\diamondsuit}} \theoremseparator{:}
 \newtheorem{mytheorem}{Theorem}
-
 
 % problem
 \theoremstyle{plain}
@@ -58,7 +76,6 @@
 \theoremsymbol{\ensuremath{\clubsuit}}
 \theoremseparator{.}
 \newtheorem{mymetric}{Metric}
-
 
 %definition
 \theoremstyle{plain}
@@ -97,13 +114,6 @@
 \theoremseparator{}
 \newtheorem{myxample}{Example}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%% Setting to control figure placement
-% These determine the rules used to place floating objects like figures
-% They are only guides, but read the manual to see the effect of each.
-%\renewcommand{\topfraction}{1.9}
-%\renewcommand{\bottomfraction}{1.9}
-%\renewcommand{\textfraction}{.1}
-%
 
 
 \makeatletter
@@ -122,6 +132,7 @@
 
 % ==== Log
 %
+%  11/2015: add page size setting
 %  11/2015: use 'subfig' to replace 'subfigure'
 %  11/2015: use 'balance', balance two-column mode paper bottom
 %  11/2015: use 'hyperref'
