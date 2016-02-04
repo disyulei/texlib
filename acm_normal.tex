@@ -32,6 +32,8 @@
 \usepackage{hyperref}                                      %
 \usepackage[]{algpseudocode}                               % algorithm package
 %\usepackage[noend]{algpseudocode}
+\makeatletter\let\c@float@type\relax\makeatother
+\makeatletter\let\float@addtolists\relax\makeatother
 \usepackage{algorithm}
 \renewcommand{\algorithmicrequire}{\textbf{Input:} }       % Use Input in the format of Algorithm
 \renewcommand{\algorithmicensure} {\textbf{Output:}}       % Use Output in the format of Algorithm
@@ -113,9 +115,11 @@
   \@esphack}
 \makeatother
 
+\iffalse
 \makeatletter
  \let\@copyrightspace\relax
 \makeatother
+\fi
 
 
 % ==== Log
