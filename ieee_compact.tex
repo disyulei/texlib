@@ -28,6 +28,13 @@
 \usepackage{url}
 \usepackage{nth}                                           % nth command
 \usepackage{bm}                                            % bm command
+\usepackage{balance}
+\usepackage{hyperref}                                      %
+\hypersetup{
+    colorlinks = true,
+    citecolor  = blue,
+    linkcolor  = blue
+}
 \setlength{\textfloatsep}{10.0pt plus 1.0pt minus 2.0pt}   % set space between float and text
 
 
@@ -51,6 +58,7 @@
 \newtheorem{myclaim}{\textbf{Claim}}
 \newtheorem{myapplication}{\textbf{Application}}
 \newtheorem{myconjecture}{Conjecture}
+\newtheorem{myprop}{Property}
 
 
 % long line in algorithm
@@ -66,13 +74,7 @@
 
 % ==== Logs:
 %
-%  11/2015: use 'hyperref'
-%  11/2015: use 'subfloat', instead of 'subfigure'
-%  06/2015: clean IEEEtranBSTCTL commands
-%  11/2014: \solregister, to support highlight to mybox, definition, and citations
-%  10/2014: add package "authblk" & "bm"
-%  09/2014: "problem" => "myproblem"
-%  07/2014: introduce \Statex[] for lone algorithmic statement
-%  05/2014: new package {soul} to use highlight command \hl{}
+%  02/2016: hyperref
+%  12/2015: copy from "ieee_conference"
 %
 

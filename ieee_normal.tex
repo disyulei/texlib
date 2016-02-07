@@ -2,7 +2,7 @@
 %         setting for IEEE format paper (normal mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 12/2015
+%   Last Update : 02/2016
 % =============================================================
 
 
@@ -17,6 +17,7 @@
 \usepackage{multirow}
 \usepackage[subrefformat=parens,farskip=0pt,justification=centering]{subfig}
 \usepackage{color}
+\usepackage{cite}                                          % more citations in one bracket
 \usepackage{comment}                                       % use comment
 \usepackage{soul}                                          % use highlight command \hl{}
 \soulregister\cite7
@@ -27,7 +28,13 @@
 \usepackage{url}
 \usepackage{nth}                                           % nth command
 \usepackage{bm}                                            % bm command
-
+\usepackage{balance}
+\usepackage{hyperref}                                      %
+\hypersetup{
+    colorlinks = true,
+    citecolor  = blue,
+    linkcolor  = blue
+}
 
 % =============================================================
 %                   Theorem Definitions
@@ -39,6 +46,7 @@
 \newtheorem{myclaim}{\textbf{Claim}}
 \newtheorem{myapplication}{\textbf{Application}}
 \newtheorem{myconjecture}{Conjecture}
+\newtheorem{myprop}{Property}
 
 
 % long line in algorithm
@@ -54,6 +62,7 @@
 
 % ==== Logs:
 %
+%  02/2016: hyperref
 %  12/2015: copy from "ieee_conference"
 %
 
