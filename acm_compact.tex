@@ -2,16 +2,20 @@
 %          Setting for ACM format paper (compact mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 12/2015
+%   Last Update : 02/2016
 % =============================================================
 
 
 % =============================================================
 %            particular setting for conference
 % =============================================================
-\setlength{\textfloatsep}{4.0pt plus 1.0pt minus 2.0pt}    % set space between float and text
+\textfloatsep          = 4pt plus 1pt minus 1pt            % set space between float and text
+\abovedisplayskip      = 0pt plus 1pt                      % set space around equations
+\belowdisplayskip      = 0pt plus 1pt
+\abovedisplayshortskip = 0pt plus 1pt
+\belowdisplayshortskip = 0pt plus 1pt
 \usepackage[font=small,labelfont=bf,skip=1pt]{caption}     % set space between figure and caption
-\DeclareCaptionType{copyrightbox}
+\setlength{\belowcaptionskip}{-2mm}
 \usepackage[subrefformat=parens,font=small,labelfont=sf,farskip=0pt,justification=centering]{subfig}
 \usepackage{enumitem}                                      % item spacing
 \setitemize{noitemsep,topsep=2pt,parsep=2pt,partopsep=2pt}
@@ -25,6 +29,7 @@
 % =============================================================
 %                 Common setting
 % =============================================================
+\DeclareCaptionType{copyrightbox}
 \usepackage{graphicx}
 \usepackage{threeparttable}
 \usepackage{ntheorem}
@@ -37,7 +42,7 @@
 \usepackage{url}
 \usepackage{nth}
 \usepackage{cite}
-\usepackage{balance} 
+\usepackage{balance}
 \usepackage{hyperref}                                      %
 \usepackage[]{algpseudocode}                               % algorithm package
 %\usepackage[noend]{algpseudocode}
@@ -124,15 +129,10 @@
   \@esphack}
 \makeatother
 
-\iffalse
-\makeatletter
- \let\@copyrightspace\relax
-\makeatother
-\fi
-
 
 % ==== Log
 %
+%  02/2016: belowcaptionskip
 %  11/2015: add page size setting
 %  11/2015: use 'subfig' to replace 'subfigure'
 %  11/2015: use 'balance', balance two-column mode paper bottom
