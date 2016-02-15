@@ -53,9 +53,14 @@
 \renewcommand{\algorithmicensure} {\textbf{Output:}}       % Use Output in the format of Algorithm
 \hypersetup{
     colorlinks = true,
-    %citecolor = blue,
-    %linkcolor = blue
+    citecolor = blue,
+    linkcolor = blue,
 }
+
+
+\newcommand{\tabincell}[2]{                                % newline in table cell
+	\begin{tabular}{@{}#1@{}}#2\end{tabular}
+} 
 
 %theorem
 \theoremstyle{plain}
@@ -132,6 +137,7 @@
 
 % ==== Log
 %
+%  02/2016: tabincell
 %  02/2016: belowcaptionskip
 %  11/2015: add page size setting
 %  11/2015: use 'subfig' to replace 'subfigure'

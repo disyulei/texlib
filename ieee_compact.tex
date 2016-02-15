@@ -2,7 +2,7 @@
 %         setting for IEEE format paper (compact mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 12/2015
+%   Last Update : 02/2016
 % =============================================================
 
 
@@ -33,7 +33,7 @@
 \hypersetup{
     colorlinks = true,
     citecolor  = blue,
-    linkcolor  = blue
+    linkcolor  = blue,
 }
 \setlength{\textfloatsep}{10.0pt plus 1.0pt minus 2.0pt}   % set space between float and text
 
@@ -61,6 +61,10 @@
 \newtheorem{myprop}{Property}
 
 
+\newcommand{\tabincell}[2]{
+    \begin{tabular}{@{}#1@{}}#2\end{tabular}
+}
+
 % long line in algorithm
 % e.g.: \Statex[4] ...;
 \makeatletter
@@ -74,6 +78,7 @@
 
 % ==== Logs:
 %
+%  02/2016: tabincell
 %  02/2016: hyperref
 %  12/2015: copy from "ieee_conference"
 %

@@ -33,7 +33,7 @@
 \hypersetup{
     colorlinks = true,
     citecolor  = blue,
-    linkcolor  = blue
+    linkcolor  = blue,
 }
 
 % =============================================================
@@ -49,6 +49,10 @@
 \newtheorem{myprop}{Property}
 
 
+\newcommand{\tabincell}[2]{
+    \begin{tabular}{@{}#1@{}}#2\end{tabular}
+}
+
 % long line in algorithm
 % e.g.: \Statex[4] ...;
 \makeatletter
@@ -62,6 +66,7 @@
 
 % ==== Logs:
 %
+%  02/2016: tabincell
 %  02/2016: hyperref
 %  12/2015: copy from "ieee_conference"
 %
