@@ -7,16 +7,16 @@
 
 
 % =============================================================
-%            particular setting for journal
+%         particular setting for normal mode
 % =============================================================
 \textfloatsep          = 10pt plus 1pt minus 2pt            % set space between float and text
+\usepackage{enumitem}                                      % item spacing
+\usepackage[subrefformat=parens]{subfig}
 
 
 % =============================================================
 %                 Common setting
 % =============================================================
-\usepackage{enumitem}                                      % item spacing
-\usepackage[subrefformat=parens]{subfig}
 \usepackage{graphicx}
 \usepackage{threeparttable}
 \usepackage{ntheorem}
@@ -31,6 +31,9 @@
 \usepackage{cite}
 \usepackage{balance}
 \usepackage{hyperref}                                      %
+\usepackage{courier}                                       % courier font, used in \texttt 
+\usepackage{listings}                                      % typeset source code listings
+\lstset{basicstyle=\ttfamily,breaklines=true}
 \usepackage[]{algpseudocode}                               % algorithm package
 %\usepackage[noend]{algpseudocode}
 \makeatletter\let\c@float@type\relax\makeatother
@@ -124,6 +127,7 @@
 
 % ==== Log
 %
+%  02/2016: courier, listings
 %  02/2016: tabincell
 %  11/2015: add page size setting
 %  11/2015: use 'subfig' to replace 'subfigure'

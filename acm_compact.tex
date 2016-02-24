@@ -7,7 +7,7 @@
 
 
 % =============================================================
-%            particular setting for conference
+%         particular setting for compact mode
 % =============================================================
 \textfloatsep          = 4pt plus 1pt minus 1pt            % set space between float and text
 \abovedisplayskip      = 0pt plus 1pt                      % set space around equations
@@ -44,6 +44,9 @@
 \usepackage{cite}
 \usepackage{balance}
 \usepackage{hyperref}                                      %
+\usepackage{courier}                                       % courier font, used in \texttt 
+\usepackage{listings}                                      % typeset source code listings
+\lstset{basicstyle=\ttfamily,breaklines=true}
 \usepackage[]{algpseudocode}                               % algorithm package
 %\usepackage[noend]{algpseudocode}
 \makeatletter\let\c@float@type\relax\makeatother
@@ -137,6 +140,7 @@
 
 % ==== Log
 %
+%  02/2016: courier, listings
 %  02/2016: tabincell
 %  02/2016: belowcaptionskip
 %  11/2015: add page size setting

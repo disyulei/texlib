@@ -2,7 +2,7 @@
 %            Setting for Proposal 
 %
 %   Author      : Bei Yu@CUHK
-%   Last Update : 11/2015
+%   Last Update : 02/2016
 % =============================================================
 
 
@@ -31,7 +31,9 @@
 \usepackage[table]{xcolor}
 \usepackage{hyperref}
 \usepackage[left=1.0in, right=1.0in, top=1.0in, bottom=1.0in]{geometry}
-
+\usepackage{courier}          % courier font, used in \texttt 
+\usepackage{listings}         % typeset source code listings
+\lstset{basicstyle=\ttfamily,breaklines=true}
 
 % ==== set section spacing
 \usepackage{titlesec}
@@ -63,6 +65,7 @@
 
 % ==== Logs:
 %
+%  02/2016: listings, courier
 %  11/2015: define problem/definition/theorem etc.
 %  11/2015: use 'hyperref'
 %  11/2015: keywords setting
