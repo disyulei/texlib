@@ -1,0 +1,157 @@
+% =============================================================
+%          Setting for ACM format paper (compact mode)
+%
+%   Author      : Bei Yu
+%   Last Update : 02/2016
+% =============================================================
+
+
+% =============================================================
+%         particular setting for compact mode
+% =============================================================
+\textfloatsep          = 4pt plus 1pt minus 1pt            % set space between float and text
+\abovedisplayskip      = 0pt plus 1pt                      % set space around equations
+\belowdisplayskip      = 0pt plus 1pt
+\abovedisplayshortskip = 0pt plus 1pt
+\belowdisplayshortskip = 0pt plus 1pt
+\usepackage[font=small,labelfont=bf,skip=1pt]{caption}     % set space between figure and caption
+\setlength{\belowcaptionskip}{-2mm}
+\usepackage[subrefformat=parens,font=small,labelfont=sf,farskip=0pt,justification=centering]{subfig}
+\usepackage{enumitem}                                      % item spacing
+\setitemize{noitemsep,topsep=2pt,parsep=2pt,partopsep=2pt}
+\paperwidth   = 8.5in                                      % US Letter page size
+\paperheight  = 11.0in
+%\paperwidth  = 8.26in                                     % A4 page size
+%\paperheight = 11.69in
+\usepackage[top=0.6in,bottom=0.6in,left=0.55in,right=0.55in]{geometry}
+
+
+% =============================================================
+%                 Common setting
+% =============================================================
+\DeclareCaptionType{copyrightbox}
+\usepackage{graphicx}
+\usepackage{threeparttable}
+\usepackage{ntheorem}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{comment}
+\usepackage{bm}                                            % bold math font
+\usepackage{etoolbox}                                      % \newtoggle, \toggletrue, \iftoggle
+\usepackage{url}
+\usepackage{nth}
+\usepackage{cite}
+\usepackage{balance}
+\usepackage{hyperref}                                      %
+\usepackage{courier}          % courier font, used in \texttt 
+\usepackage{listings}         % typeset source code listings
+\lstset{basicstyle=\ttfamily,breaklines=true}
+\usepackage[]{algpseudocode}                               % algorithm package
+%\usepackage[noend]{algpseudocode}
+\makeatletter\let\c@float@type\relax\makeatother
+\makeatletter\let\float@addtolists\relax\makeatother
+\usepackage{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:} }       % Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure} {\textbf{Output:}}       % Use Output in the format of Algorithm
+\hypersetup{
+    colorlinks = true,
+    citecolor = blue,
+    linkcolor = blue,
+}
+
+
+\newcommand{\tabincell}[2]{                                % newline in table cell
+	\begin{tabular}{@{}#1@{}}#2\end{tabular}
+} 
+
+%theorem
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}\theorembodyfont{\slshape}
+\theoremsymbol{\ensuremath{\diamondsuit}} \theoremseparator{:}
+\newtheorem{mytheorem}{Theorem}
+
+% problem
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\clubsuit}}
+\theoremseparator{.}
+\newtheorem{myproblem}{Problem}
+
+% application
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\clubsuit}}
+\theoremseparator{.}
+\newtheorem{myapplication}{Application}
+
+% metric
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\clubsuit}}
+\theoremseparator{.}
+\newtheorem{mymetric}{Metric}
+
+%definition
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\clubsuit}}
+\theoremseparator{.}
+\newtheorem{mydefinition}{Definition}
+
+%lemma
+%\theoremstyle{changebreak}
+\theoremsymbol{\ensuremath{\heartsuit}}
+%\theoremindent0.5cm
+%\theoremnumbering{greek}
+\newtheorem{mylemma}{Lemma}
+
+%claim
+%\theoremstyle{changebreak}
+\theoremsymbol{\ensuremath{\heartsuit}}
+%\theoremindent0.5cm
+%\theoremnumbering{greek}
+\newtheorem{myclaim}{Claim}
+
+%Property
+\theoremsymbol{\ensuremath{\heartsuit}}
+\newtheorem{myprop}{Property}
+
+%proof
+\theoremheaderfont{\sc}\theorembodyfont{\upshape}
+\theoremstyle{nonumberplain} \theoremseparator{}
+\theoremsymbol{\rule{1ex}{1ex}}
+\newtheorem{myproof}{Proof}
+
+%example
+\theoremstyle{change}
+\theorembodyfont{\upshape}
+\theoremsymbol{\ensuremath{\ast}}
+\theoremseparator{}
+\newtheorem{myxample}{Example}
+
+
+
+\makeatletter
+\def\bstctlcite{\@ifnextchar[{\@bstctlcite}{\@bstctlcite[@auxout]}}
+\def\@bstctlcite[#1]#2{\@bsphack
+  \@for\@citeb:=#2\do{%
+    \edef\@citeb{\expandafter\@firstofone\@citeb}%
+    \if@filesw\immediate\write\csname #1\endcsname{\string\citation{\@citeb}}\fi}%
+  \@esphack}
+\makeatother
+
+
+% ==== Log
+%
+%  02/2016: courier, listings
+%  02/2016: tabincell
+%  02/2016: belowcaptionskip
+%  11/2015: add page size setting
+%  11/2015: use 'subfig' to replace 'subfigure'
+%  11/2015: use 'balance', balance two-column mode paper bottom
+%  11/2015: use 'hyperref'
+%  12/2014: nth package
+%  11/2014: add newtheorem "myapplication"
+%  11/2014: add package "etoolbox"
+%  10/2014: add package "authblk" & "bm"
+%  10/2014: add "bstctlcite"
+%  06/2014: forbid package "cite", check why!
+%
+
