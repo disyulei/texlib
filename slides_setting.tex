@@ -6,13 +6,27 @@
 %   Last Update : 03/2015
 % ===============================================
 
+% =============================================
+%            Specify colors
+% =============================================
+%\usepackage{xcolor}
+\definecolor{UTDAorange}{RGB}{244,106,18} %F47012
+\definecolor{UTDAblue}{RGB}{0,111,190}    %006FBE
+\definecolor{UTDAgreen}{RGB}{0,127,128}   %007F80
+\definecolor{UTDAred}{RGB}{228,46,36}     %E42E24
+\definecolor{CUHKyellow}{RGB}{198,148,34} %C69422
+\definecolor{CUHKdark}{RGB}{114,44,114}   %722C72
+\definecolor{CUHKmiddle}{RGB}{144,44,144} %902C90
+\definecolor{CUHKlight}{RGB}{167,44,167}  %A72CA7
+\setbeamercolor{structure}{fg=UTDAblue}
+\setbeamercolor{alerted text}{fg=UTDAorange}
+
 % ==== packages
 \usepackage{bm}
 \usepackage{algpseudocode}           % for algorithm
 \usepackage{algorithm}
 \usepackage{pgfpages}                % allow note printing
 \usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
-%\usepackage{amsmath,amssymb}
 \usepackage{amsmath}
 \usepackage{times}
 \usepackage{multirow}
@@ -23,6 +37,24 @@
 \usepackage{animate}                 % animation 
 \usefonttheme[onlymath]{serif}       % 
 \usepackage{etoolbox}                % commands \newtoggle, \toggletrue, \iftoggle
+\usepackage{courier}                 % courier font, used in \texttt
+\usepackage{listings}                % typeset source code listings
+\lstset{basicstyle=\ttfamily,breaklines=true}
+\lstdefinestyle{base}
+{
+    language   = C,
+    emptylines = 1,
+    breaklines = true,
+    basicstyle = \ttfamily\scriptsize,
+    moredelim  = **[is][\color{red}]{@}{@},
+}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    urlcolor   = UTDAgreen,
+    citecolor  = cyan,
+    linkcolor  = UTDAgreen,
+}
 
 
 %\mode<article> % only for the article version
@@ -97,19 +129,6 @@
 %}
 
 
-% =============================================
-%            Specify colors
-% =============================================
-\definecolor{UTDAorange}{RGB}{244,106,18} %F47012
-\definecolor{UTDAblue}{RGB}{0,111,190}    %006FBE
-\definecolor{UTDAgreen}{RGB}{0,127,128}   %007F80
-\definecolor{UTDAred}{RGB}{228,46,36}     %E42E24
-\definecolor{CUHKyellow}{RGB}{198,148,34} %C69422
-\definecolor{CUHKdark}{RGB}{114,44,114}   %722C72
-\definecolor{CUHKmiddle}{RGB}{144,44,144} %902C90
-\definecolor{CUHKlight}{RGB}{167,44,167}  %A72CA7
-\setbeamercolor{structure}{fg=UTDAblue}
-\setbeamercolor{alerted text}{fg=UTDAorange}
 
 
 
@@ -134,11 +153,13 @@
 %\beamertemplateshadingbackground{white}{white}
 
 % ==== Log
-%  10.2014: package{serif} for article style math fonts
-%  05/2014: new varblock definition;  package{wasysym} to show smiling face
-%  02/2015: no corner logo in main pages
+%
+%  03/2016: listing, hyperref
 %  03/2015: no logo settings in library file, move to local specific tex file 
 %  03/2015: package{etoolbox}
+%  02/2015: no corner logo in main pages
+%  05/2014: new varblock definition;  package{wasysym} to show smiling face
+%  10.2014: package{serif} for article style math fonts
 %  
 
 
