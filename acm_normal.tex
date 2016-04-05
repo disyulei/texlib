@@ -2,7 +2,7 @@
 %         Setting for ACM format paper (normal mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 03/2016
+%   Last Update : 04/2016
 % =============================================================
 
 
@@ -18,6 +18,7 @@
 % =============================================================
 %                 Common setting
 % =============================================================
+\DeclareCaptionType{copyrightbox}
 \usepackage{graphicx}
 \usepackage{threeparttable}
 \usepackage{ntheorem}
@@ -31,9 +32,9 @@
 \usepackage{nth}
 \usepackage{cite}
 \usepackage{balance}
-\usepackage{hyperref}                                      %
-\usepackage{courier}          % courier font, used in \texttt 
-\usepackage{listings}         % typeset source code listings
+\usepackage[bookmarks=false]{hyperref}                     %
+\usepackage{courier}                                       % courier font, used in \texttt 
+\usepackage{listings}                                      % typeset source code listings
 \lstset{basicstyle=\ttfamily,breaklines=true}
 \usepackage[]{algpseudocode}                               % algorithm package
 %\usepackage[noend]{algpseudocode}
@@ -44,14 +45,14 @@
 \renewcommand{\algorithmicensure} {\textbf{Output:}}       % Use Output in the format of Algorithm
 \hypersetup{
     colorlinks = true,
-    citecolor = blue,
-    linkcolor = blue,
+    citecolor  = blue,
+    linkcolor  = blue,
 }
 
 
 \newcommand{\tabincell}[2]{                                % newline in table cell
 	\begin{tabular}{@{}#1@{}}#2\end{tabular}
-} 
+}
 
 %theorem
 \theoremstyle{plain}
@@ -151,6 +152,7 @@
 
 % ==== Log
 %
+%  04/2016: remove bookmarks in hyperref
 %  03/2016: definitions supporting latexdiff
 %  02/2016: courier, listings
 %  02/2016: tabincell
