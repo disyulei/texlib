@@ -49,6 +49,7 @@
 \lstset{basicstyle=\ttfamily,breaklines=true}
 \usepackage[]{algpseudocode}                               % algorithm package
 %\usepackage[noend]{algpseudocode}
+\algrenewcommand\textproc{\texttt}
 \makeatletter\let\c@float@type\relax\makeatother
 \makeatletter\let\float@addtolists\relax\makeatother
 \usepackage{algorithm}
@@ -76,12 +77,6 @@
 \theoremsymbol{\ensuremath{\clubsuit}}
 \theoremseparator{.}
 \newtheorem{myproblem}{Problem}
-
-% assumption
-\theoremstyle{plain}
-\theoremsymbol{\ensuremath{\clubsuit}}
-\theoremseparator{.}
-\newtheorem{myassumption}{Assumption}
 
 % application
 \theoremstyle{plain}
@@ -169,7 +164,7 @@
 
 % ==== Log
 %
-%  04/2016: add "Assumption"
+%  04/2016: set font of algorithmic function name to \texttt{}
 %  04/2016: remove bookmarks in hyperref
 %  03/2016: definitions supporting latexdiff
 %  02/2016: courier, listings
