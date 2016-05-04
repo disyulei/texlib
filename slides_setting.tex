@@ -3,23 +3,23 @@
 %          beamer slides setting
 %
 %   Author      : Bei Yu
-%   Last Update : 03/2016
+%   Last Update : 05/2016
 % ===============================================
 
 % =============================================
 %            Specify colors
 % =============================================
 %\usepackage{xcolor}
-\definecolor{UTDAorange}{RGB}{244,106,18} %F47012
-\definecolor{UTDAblue}{RGB}{0,111,190}    %006FBE
-\definecolor{UTDAgreen}{RGB}{0,127,128}   %007F80
-\definecolor{UTDAred}{RGB}{228,46,36}     %E42E24
+\definecolor{CUHKorange}{RGB}{244,106,18} %F47012
+\definecolor{CUHKblue}{RGB}{0,111,190}    %006FBE
+\definecolor{CUHKgreen}{RGB}{0,127,128}   %007F80
+\definecolor{CUHKred}{RGB}{228,46,36}     %E42E24
 \definecolor{CUHKyellow}{RGB}{198,148,34} %C69422
 \definecolor{CUHKdark}{RGB}{114,44,114}   %722C72
 \definecolor{CUHKmiddle}{RGB}{144,44,144} %902C90
 \definecolor{CUHKlight}{RGB}{167,44,167}  %A72CA7
-\setbeamercolor{structure}{fg=UTDAblue}
-\setbeamercolor{alerted text}{fg=UTDAorange}
+\setbeamercolor{structure}{fg=CUHKblue}
+\setbeamercolor{alerted text}{fg=CUHKorange}
 
 % ==== packages
 \usepackage{bm}
@@ -32,6 +32,8 @@
 \usepackage{multirow}
 \usepackage{subfigure}
 \usepackage{graphicx}
+\usepackage{caption}
+\captionsetup[figure]{font=scriptsize,textfont={color=CUHKgreen},labelformat=empty}
 \usepackage[english]{babel}
 \usepackage{wasysym}                 % smiling face
 \usepackage{animate}                 % animation 
@@ -51,9 +53,9 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks = true,
-    urlcolor   = UTDAgreen,
+    urlcolor   = CUHKgreen,
     citecolor  = cyan,
-    linkcolor  = UTDAgreen,
+    linkcolor  = CUHKgreen,
 }
 
 
@@ -110,11 +112,10 @@
 % ==================================================
 %         Corner logo on title page
 % ==================================================
-\titlegraphic{
-    \hspace{8cm}
-    %\includegraphics[width=1cm]{./figs/logo_utda}
-    \includegraphics[width=1cm]{./figs/logo_utece}
-}
+%\titlegraphic{
+%    \hspace{8cm}
+%    \includegraphics[width=1cm]{./figs/logo_utece}
+%}
 
 % ==================================================
 %              Corner logo
@@ -154,6 +155,7 @@
 
 % ==== Log
 %
+%  05/2016: customize figure caption: font size, font color, and remove 'Figure' label
 %  03/2016: listing, hyperref
 %  03/2015: no logo settings in library file, move to local specific tex file 
 %  03/2015: package{etoolbox}
