@@ -2,7 +2,7 @@
 %          Setting for ACM format paper (compact mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 04/2016
+%   Last Update : 07/2016
 % =============================================================
 
 
@@ -15,15 +15,16 @@
 \abovedisplayshortskip = 0pt plus 1pt
 \belowdisplayshortskip = 0pt plus 1pt
 \usepackage[font=small,labelfont=bf,skip=1pt]{caption}     % set space between figure and caption
-\setlength{\belowcaptionskip}{-1.2mm}
+\setlength{\belowcaptionskip}{-1.0mm}
 \usepackage[subrefformat=parens,font=small,labelfont=sf,farskip=0pt,justification=centering]{subfig}
 \usepackage{enumitem}                                      % item spacing
-\setitemize{noitemsep,topsep=2pt,parsep=2pt,partopsep=2pt}
+\setitemize{noitemsep,topsep=2pt,parsep=1pt,partopsep=2pt}
 \paperwidth   = 8.5in                                      % US Letter page size
 \paperheight  = 11.0in
 %\paperwidth  = 8.26in                                     % A4 page size
 %\paperheight = 11.69in
 \usepackage[top=0.6in,bottom=0.6in,left=0.55in,right=0.55in]{geometry}
+\setlength{\columnsep}{16pt}                               % set space between columns
 
 
 % =============================================================
@@ -110,6 +111,12 @@
 %\theoremnumbering{greek}
 \newtheorem{myclaim}{Claim}
 
+%example
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\heartsuit}}
+\theoremseparator{.}
+\newtheorem{myexample}{Example}
+
 %Property
 \theoremsymbol{\ensuremath{\heartsuit}}
 \newtheorem{myprop}{Property}
@@ -119,13 +126,6 @@
 \theoremstyle{nonumberplain} \theoremseparator{}
 \theoremsymbol{\rule{1ex}{1ex}}
 \newtheorem{myproof}{Proof}
-
-%example
-\theoremstyle{change}
-\theorembodyfont{\upshape}
-\theoremsymbol{\ensuremath{\ast}}
-\theoremseparator{}
-\newtheorem{myxample}{Example}
 
 
 
@@ -164,6 +164,7 @@
 
 % ==== Log
 %
+%  07/2016: correct format for myexample
 %  04/2016: set font of algorithmic function name to \texttt{}
 %  04/2016: remove bookmarks in hyperref
 %  03/2016: definitions supporting latexdiff

@@ -2,7 +2,7 @@
 %         Setting for ACM format paper (normal mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 04/2016
+%   Last Update : 07/2016
 % =============================================================
 
 
@@ -101,6 +101,12 @@
 %\theoremnumbering{greek}
 \newtheorem{myclaim}{Claim}
 
+%example
+\theoremstyle{plain}
+\theoremsymbol{\ensuremath{\heartsuit}}
+\theoremseparator{.}
+\newtheorem{myexample}{Example}
+
 %Property
 \theoremsymbol{\ensuremath{\heartsuit}}
 \newtheorem{myprop}{Property}
@@ -110,13 +116,6 @@
 \theoremstyle{nonumberplain} \theoremseparator{}
 \theoremsymbol{\rule{1ex}{1ex}}
 \newtheorem{myproof}{Proof}
-
-%example
-\theoremstyle{change}
-\theorembodyfont{\upshape}
-\theoremsymbol{\ensuremath{\ast}}
-\theoremseparator{}
-\newtheorem{myxample}{Example}
 
 
 
@@ -155,6 +154,7 @@
 
 % ==== Log
 %
+%  07/2016: correct format for myexample
 %  04/2016: set font of algorithmic function name to \texttt{}
 %  04/2016: remove bookmarks in hyperref
 %  03/2016: definitions supporting latexdiff
