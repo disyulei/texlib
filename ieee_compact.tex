@@ -2,7 +2,7 @@
 %         setting for IEEE format paper (compact mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 07/2016
+%   Last Update : 09/2016
 % =============================================================
 
 
@@ -28,6 +28,7 @@
 \usepackage{url}
 \usepackage{nth}                                           % nth command
 \usepackage{bm}                                            % bm command
+\usepackage{courier}
 \usepackage{balance}
 \usepackage{threeparttable}
 \usepackage[bookmarks=false]{hyperref}                     %
@@ -41,6 +42,8 @@
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \pgfplotsset{compat=newest}
+\usepackage{caption} 
+\captionsetup[table]{skip=0pt}
 
 
 % =============================================================
@@ -51,9 +54,16 @@
 %\paperwidth  = 8.26in                                     % A4
 %\paperheight = 11.69in
 \usepackage[top=0.8in,bottom=0.8in,left=0.6in,right=0.6in]{geometry}
-\setlength{\textfloatsep}{10pt plus 1pt minus 2pt}         % set space between float and text
-\setlength{\intextsep}{4pt plus 1pt minus 2pt}             % set space between text and float
-\setlength{\columnsep}{16pt}                               % set space between columns
+\setlength{\textfloatsep}{10pt plus 1pt minus 1pt}         % set space between float and text
+\setlength{\floatsep}{10pt plus 1pt minus 1pt}             % set space between two floats
+\setlength{\intextsep}{4pt plus 1pt minus 1pt}             % set space between text and float
+\setlength{\columnsep}{14pt}                               % set space between columns
+% ==== reduce space around equations
+\setlength{\belowdisplayskip}{4pt} \setlength{\belowdisplayshortskip}{4pt}
+\setlength{\abovedisplayskip}{4pt} \setlength{\abovedisplayshortskip}{4pt}
+% ==== reduce space above subsections
+\let\oldsubsection\subsection
+\renewcommand{\subsection}{\vspace{-0.75em}\oldsubsection}
 
 
 % =============================================================
@@ -110,6 +120,7 @@
 
 % ==== Logs:
 %
+%  09/2016: captionsetup
 %  07/2016: support to pgfplots
 %  07/2016: threeparttable
 %  05/2016: setlength intextsep & columnsep

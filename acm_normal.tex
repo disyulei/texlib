@@ -2,14 +2,14 @@
 %         Setting for ACM format paper (normal mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 07/2016
+%   Last Update : 08/2016
 % =============================================================
 
 
 % =============================================================
 %         particular setting for normal mode
 % =============================================================
-\textfloatsep          = 10pt plus 1pt minus 2pt            % set space between float and text
+\textfloatsep          = 10pt plus 1pt minus 2pt           % set space between float and text
 \usepackage[labelfont=bf]{caption}                         % set caption font size
 \usepackage[subrefformat=parens]{subfig}
 \captionsetup[table]{aboveskip=0pt}                        % reduce space around table caption
@@ -35,7 +35,6 @@
 \usepackage{nth}
 \usepackage{cite}
 \usepackage{balance}
-\usepackage[bookmarks=false]{hyperref}                     %
 \usepackage{courier}                                       % courier font, used in \texttt 
 \usepackage{listings}                                      % typeset source code listings
 \lstset{basicstyle=\ttfamily,breaklines=true}
@@ -47,6 +46,8 @@
 \usepackage{algorithm}
 \renewcommand{\algorithmicrequire}{\textbf{Input:} }       % Use Input in the format of Algorithm
 \renewcommand{\algorithmicensure} {\textbf{Output:}}       % Use Output in the format of Algorithm
+\usepackage[bookmarks=false]{hyperref}                     %
+\usepackage[hyphenbreaks]{breakurl}                        % break long url
 \hypersetup{
     colorlinks = true,
     citecolor  = blue,
@@ -156,6 +157,7 @@
 
 % ==== Log
 %
+%  08/2016: break long url
 %  07/2016: captionsetup
 %  07/2016: correct format for myexample, colortbl
 %  04/2016: set font of algorithmic function name to \texttt{}

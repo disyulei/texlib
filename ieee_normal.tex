@@ -2,7 +2,7 @@
 %         setting for IEEE format paper (normal mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 07/2016
+%   Last Update : 09/2016
 % =============================================================
 
 
@@ -28,6 +28,7 @@
 \usepackage{url}
 \usepackage{nth}                                           % nth command
 \usepackage{bm}                                            % bm command
+\usepackage{courier}
 \usepackage{balance}
 \usepackage{threeparttable}
 \usepackage[bookmarks=false]{hyperref}                     %
@@ -41,6 +42,9 @@
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \pgfplotsset{compat=newest}
+\usepackage{caption} 
+\captionsetup[table]{skip=4pt}
+\setlength{\columnsep}{16pt}                               % set space between columns
 
 % =============================================================
 %                   Theorem Definitions
@@ -96,6 +100,7 @@
 
 % ==== Logs:
 %
+%  09/2016: captionsetup, columnsep
 %  07/2016: support to pgfplots
 %  07/2016: threeparttable
 %  04/2016: definitions supporting latexdiff
