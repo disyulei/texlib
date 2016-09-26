@@ -3,7 +3,7 @@
 %          beamer slides setting
 %
 %   Author      : Bei Yu
-%   Last Update : 05/2016
+%   Last Update : 09/2016
 % ===============================================
 
 \setbeamerfont{frametitle}{size=\huge}
@@ -42,6 +42,7 @@
 \usefonttheme[onlymath]{serif}       % 
 \usepackage{etoolbox}                % commands \newtoggle, \toggletrue, \iftoggle
 \usepackage{courier}                 % courier font, used in \texttt
+\usepackage{soul}
 \usepackage{listings}                % typeset source code listings
 \lstset{basicstyle=\ttfamily,breaklines=true}
 \lstdefinestyle{base}
@@ -82,6 +83,20 @@
     \end{actionenv}
   }
 
+% question block 
+\newenvironment<>{qblock}[2][\textwidth]{%
+  \setlength{\textwidth}{#1}
+  \setbeamercolor{block title}{fg=black,bg=CUHKyellow!40}
+  \setbeamercolor{block body}{fg=black,bg=white}
+  \begin{actionenv}#3%
+  \def\insertblocktitle{#2}%
+  \par%
+  \usebeamertemplate{block begin}}
+  {
+    \par%
+    \usebeamertemplate{block end}%
+    \end{actionenv}
+  }
 
 % ======================================================
 %             Slides theme
@@ -156,6 +171,7 @@
 
 % ==== Log
 %
+%  09/2016: qblock for teaching slides
 %  05/2016: set frametitle size to huge, by default beamer uses 9pt
 %  05/2016: customize figure caption: font size, font color, and remove 'Figure' label
 %  03/2016: listing, hyperref
