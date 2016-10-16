@@ -15,7 +15,7 @@
 \usepackage{amsfonts}
 \usepackage{booktabs}
 \usepackage{multirow}
-\usepackage[farskip=0pt,justification=centering]{subfig}
+\usepackage[subrefformat=parens,farskip=0pt,justification=centering]{subfig}
 \usepackage{graphicx}         % include pdf figures
 \usepackage{color}
 \usepackage{cite}             % more citations in one bracket
@@ -28,11 +28,18 @@
 \usepackage{authblk}
 \usepackage{wrapfig}
 \usepackage[table]{xcolor}
-\usepackage{hyperref}
+\usepackage[bookmarks=false]{hyperref}                     %
+\hypersetup{
+    colorlinks = true,
+    citecolor  = blue,
+    linkcolor  = blue,
+    urlcolor   = blue,
+}
 \usepackage[left=1.0in, right=1.0in, top=1.0in, bottom=1.0in]{geometry}
 \usepackage{courier}          % courier font, used in \texttt 
 \usepackage{listings}         % typeset source code listings
 \lstset{basicstyle=\ttfamily,breaklines=true}
+\usepackage{pgfgantt}
 
 % ==== set section spacing
 \usepackage{titlesec}
@@ -87,6 +94,7 @@
 
 % ==== Logs:
 %
+%  10/2016: pgfgantt support
 %  02/2016: listings, courier
 %  11/2015: define problem/definition/theorem etc.
 %  11/2015: use 'hyperref'
