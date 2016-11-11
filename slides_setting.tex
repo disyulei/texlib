@@ -3,7 +3,7 @@
 %          beamer slides setting
 %
 %   Author      : Bei Yu
-%   Last Update : 10/2016
+%   Last Update : 11/2016
 % ===============================================
 
 \setbeamerfont{frametitle}{size=\LARGE}
@@ -31,7 +31,7 @@
 \usepackage{pgfpages}                % allow note printing
 \usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
 \usepackage{amsmath}
-\usepackage{times}
+\usepackage{newtxtext}               % to use Times font (only for text, but not for math)
 \usepackage{multirow}
 \usepackage{subfig}
 \usepackage{graphicx}
@@ -62,43 +62,6 @@
     linkcolor  = CUHKgreen,
 }
 
-
-%\mode<article> % only for the article version
-%{
-%  \usepackage{fullpage}
-%  \usepackage{hyperref}
-%}
-
-% block width setting
-\newenvironment<>{varblock}[2][\textwidth]{%
-  \setlength{\textwidth}{#1}
-  \setbeamercolor{block title}{fg=white,bg=CUHKblue}
-  \setbeamercolor{block body}{fg=black,bg=blue!10}
-  \begin{actionenv}#3%
-  \def\insertblocktitle{#2}%
-  \par%
-  \usebeamertemplate{block begin}}
-  {
-    \par%
-    \usebeamertemplate{block end}%
-    \end{actionenv}
-  }
-
-% question block 
-\newenvironment<>{qblock}[2][\textwidth]{%
-  \setlength{\textwidth}{#1}
-  \setbeamercolor{block title}{fg=black,bg=CUHKyellow!40}
-  \setbeamercolor{block body}{fg=black,bg=white}
-  \begin{actionenv}#3%
-  \def\insertblocktitle{#2}%
-  \par%
-  \usebeamertemplate{block begin}}
-  {
-    \par%
-    \usebeamertemplate{block end}%
-    \end{actionenv}
-  }
-
 % ======================================================
 %             Slides theme
 % ======================================================
@@ -124,6 +87,51 @@
 %\usecolortheme{seahorse}       % blue + grey
 \usecolortheme{rose}           % default blue
 %\usecolortheme{default}
+
+
+%\mode<article> % only for the article version
+%{
+%  \usepackage{fullpage}
+%  \usepackage{hyperref}
+%}
+
+
+% ========================================
+%           block setting
+% ========================================
+% varblock
+\newenvironment<>{varblock}[2][\textwidth]{%
+  \setlength{\textwidth}{#1}
+  \setbeamercolor{block title}{fg=white,bg=CUHKblue}
+  \setbeamercolor{block body}{fg=black,bg=blue!10}
+  \begin{actionenv}#3%
+  \def\insertblocktitle{#2}%
+  \par%
+  \usebeamertemplate{block begin}}
+  {
+    \par%
+    \usebeamertemplate{block end}%
+    \end{actionenv}
+  }
+% question block 
+\newenvironment<>{qblock}[2][\textwidth]{%
+  \setlength{\textwidth}{#1}
+  \setbeamercolor{block title}{fg=black,bg=CUHKyellow!40}
+  \setbeamercolor{block body}{fg=black,bg=white}
+  \begin{actionenv}#3%
+  \def\insertblocktitle{#2}%
+  \par%
+  \usebeamertemplate{block begin}}
+  {
+    \par%
+    \usebeamertemplate{block end}%
+    \end{actionenv}
+  }
+\setbeamerfont{block title}{size=\LARGE}
+\setbeamerfont{block title example}{size=\LARGE}
+\setbeamerfont{block body alerted}{size=\LARGE}
+\setbeamercolor{block title}{fg=CUHKorange}
+\setbeamercolor{block title alerted}{fg=CUHKblue}
 
 
 % ==================================================
@@ -172,6 +180,7 @@
 
 % ==== Log
 %
+%  11/2016: block settings
 %  10/2016: title font size huge -> LARGE
 %  09/2016: qblock for teaching slides
 %  05/2016: set frametitle size to huge, by default beamer uses 9pt
