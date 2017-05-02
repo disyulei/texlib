@@ -2,7 +2,7 @@
 %         Setting for ACM format paper (normal mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 10/2016
+%   Last Update : 11/2016
 % =============================================================
 
 
@@ -36,6 +36,7 @@
 \usepackage{cite}
 \usepackage{balance}
 \usepackage{courier}                                       % courier font, used in \texttt 
+\usepackage{booktabs}                                      % \toprule \bottomrule
 \usepackage{listings}                                      % typeset source code listings
 \lstset{basicstyle=\ttfamily,breaklines=true}
 \usepackage[]{algpseudocode}                               % algorithm package
@@ -66,56 +67,63 @@
 
 %theorem
 \theoremstyle{plain}
-\theoremheaderfont{\normalfont\bfseries}\theorembodyfont{\slshape}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
 \theoremsymbol{\ensuremath{\diamondsuit}} \theoremseparator{:}
 \newtheorem{mytheorem}{Theorem}
 
 % problem
 \theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape}
 \theoremsymbol{\ensuremath{\clubsuit}}
 \theoremseparator{.}
 \newtheorem{myproblem}{Problem}
 
-% application
+%lemma
 \theoremstyle{plain}
-\theoremsymbol{\ensuremath{\clubsuit}}
-\theoremseparator{.}
-\newtheorem{myapplication}{Application}
+\theoremsymbol{\ensuremath{\heartsuit}}
+\theoremsymbol{\ensuremath{\diamondsuit}} \theoremseparator{:}
+\newtheorem{mylemma}{Lemma}
 
-% metric
+% corollary
 \theoremstyle{plain}
 \theoremsymbol{\ensuremath{\clubsuit}}
-\theoremseparator{.}
-\newtheorem{mymetric}{Metric}
+\theoremsymbol{\ensuremath{\diamondsuit}} \theoremseparator{:}
+\newtheorem{mycorollary}{Corollary}
 
 %definition
-\theoremstyle{plain}
+\theoremstyle{definition}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
 \theoremsymbol{\ensuremath{\clubsuit}}
 \theoremseparator{.}
 \newtheorem{mydefinition}{Definition}
 
-%lemma
-%\theoremstyle{changebreak}
-\theoremsymbol{\ensuremath{\heartsuit}}
-%\theoremindent0.5cm
-%\theoremnumbering{greek}
-\newtheorem{mylemma}{Lemma}
+% application
+\theoremstyle{definition}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremsymbol{\ensuremath{\clubsuit}}
+\theoremseparator{.}
+\newtheorem{myapplication}{Application}
 
 %claim
-%\theoremstyle{changebreak}
+\theoremstyle{definition}
 \theoremsymbol{\ensuremath{\heartsuit}}
-%\theoremindent0.5cm
-%\theoremnumbering{greek}
+\theoremseparator{.}
 \newtheorem{myclaim}{Claim}
 
 %example
-\theoremstyle{plain}
+\theoremstyle{definition}
 \theoremsymbol{\ensuremath{\heartsuit}}
 \theoremseparator{.}
 \newtheorem{myexample}{Example}
 
 %Property
+\theoremstyle{definition}
 \theoremsymbol{\ensuremath{\heartsuit}}
+\theoremseparator{.}
 \newtheorem{myprop}{Property}
 
 %proof
@@ -123,8 +131,6 @@
 \theoremstyle{nonumberplain} \theoremseparator{}
 \theoremsymbol{\rule{1ex}{1ex}}
 \newtheorem{myproof}{Proof}
-
-
 
 \makeatletter
 \def\bstctlcite{\@ifnextchar[{\@bstctlcite}{\@bstctlcite[@auxout]}}
@@ -161,6 +167,7 @@
 
 % ==== Log
 %
+%  11/2016: package booktabs; theorem/definition formats
 %  10/2016: pgfplots support
 %  08/2016: break long url
 %  07/2016: captionsetup

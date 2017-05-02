@@ -9,7 +9,8 @@
 %\usepackage[noend]{algpseudocode}
 \usepackage{algpseudocode}    % new algorithm package
 \usepackage{algorithm}
-\usepackage{mathptmx}         % to use Times font
+%\usepackage{mathptmx}        % to use Times font (both text & math)
+\usepackage{newtxtext}        % to use Times font (only for text, but not for math)
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -35,11 +36,18 @@
     linkcolor  = blue,
     urlcolor   = blue,
 }
-\usepackage[left=1.0in, right=1.0in, top=1.0in, bottom=1.0in]{geometry}
+%\usepackage[left=1.0in, right=1.0in, top=1.0in, bottom=1.0in]{geometry}
+\usepackage[left=0.9in, right=0.9in, top=0.9in, bottom=0.9in]{geometry}
 \usepackage{courier}          % courier font, used in \texttt 
 \usepackage{listings}         % typeset source code listings
 \lstset{basicstyle=\ttfamily,breaklines=true}
 \usepackage{pgfgantt}
+\usepackage[labelfont=bf]{caption}
+\captionsetup[table]{skip=2pt} % skip space between caption and table
+\usepackage{pgfplots}          % pgfplot support
+\usepackage{filecontents}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
 
 % ==== set section spacing
 \usepackage{titlesec}
