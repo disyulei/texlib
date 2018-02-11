@@ -1,0 +1,71 @@
+% =============================================================
+%         Setting for ACM 2017 format 
+%
+%   Author      : Bei Yu
+%   Last Update : 01/2018
+% =============================================================
+
+\settopmatter{printacmref=false}          % no ACM Reference Format
+\fancyhead{}                              % no header
+
+% ==== page margin settings
+\geometry{twoside=true, head=13pt,
+	paperwidth=8.5in, paperheight=11in,
+	includeheadfoot, columnsep=16pt,
+	top=0.8in, bottom=0.8in, inner=0.6in, outer=0.60in,
+	marginparwidth=2pc,heightrounded
+}%
+
+% ==== Packages 
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage{subfig}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage{threeparttable,booktabs}
+\usepackage{tikz}
+\usepackage{balance}
+\usepackage{courier}                                       % courier font, used in \texttt
+\usepackage[mathcal]{eucal}
+\usepackage[]{algpseudocode}                               % algorithm package
+%\usepackage[noend]{algpseudocode}
+\algrenewcommand\textproc{\texttt}
+\makeatletter\let\float@addtolists\relax\makeatother
+\usepackage{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:} }       % Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure} {\textbf{Output:}}       % Use Output in the format of Algorithm
+\usepackage{filecontents}                                  % support to pgfplots
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+
+
+% ==== Local new commands 
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\m}[1]{\mathbf{#1}}
+\DeclareMathOperator*{\argmin}{argmin}
+
+\theoremstyle{plain}
+\newtheorem{mytheorem}{\textbf{Theorem}}
+\newtheorem{mylemma}{\textbf{Lemma}}
+\newtheorem{myclaim}{\textbf{Claim}}
+\newtheorem{mydefinition}{\textbf{Definition}}
+
+\theoremstyle{definition}
+\newtheorem{myproblem}{\textbf{Problem}}
+
+
+
+% ==== spacing control on caption
+\usepackage[skip=1pt]{caption}            % set space between figure and caption
+\setlength{\belowcaptionskip}{-1.0mm}
+\captionsetup[table]{aboveskip=5pt}       % reduce space around table caption
+\captionsetup[table]{belowskip=2pt}
