@@ -2,7 +2,7 @@
 %         setting for IEEE format paper (normal mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 09/2016
+%   Last Update : 01/2020
 % =============================================================
 
 
@@ -13,6 +13,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[mathcal]{eucal}
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage[subrefformat=parens,farskip=0pt,justification=centering]{subfig}
@@ -25,7 +27,6 @@
 \soulregister\cite7
 \soulregister\ref7
 \soulregister\pageref7
-\usepackage{amsthm}
 \usepackage{etoolbox}                                      % commands \newtoggle, \toggletrue, \iftoggle
 \usepackage{url}
 \usepackage{nth}                                           % nth command
@@ -33,7 +34,7 @@
 \usepackage{courier}
 \usepackage{balance}
 \usepackage{threeparttable}
-\usepackage[bookmarks=false]{hyperref}                     %
+\usepackage[bookmarks=false]{hyperref}
 \hypersetup{
     colorlinks = true,
     citecolor  = blue,
@@ -46,12 +47,16 @@
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \pgfplotsset{compat=newest}
-\usepackage{caption} 
+\usepackage{caption}
 \usepackage{cleveref}
 \Crefformat{figure}{Fig.~#2#1#3}                           % "Fig.", instead of "Figure"
+\Crefname{subfigure}{Fig.}{Figs.}
+\Crefname{figure}{Fig.}{Figs.}
 \Crefformat{table}{TABLE~#2#1#3}                           % "TABLE", instead of "Table"
 \captionsetup[table]{skip=4pt}
-\setlength{\columnsep}{16pt}                               % set space between columns
+\captionsetup{labelsep=space}
+
+% ==== local color definitions
 \definecolor{CUHKorange}{RGB}{244,106,18} %F47012
 \definecolor{CUHKblue}{RGB}{0,111,190}    %006FBE
 \definecolor{CUHKgreen}{RGB}{0,127,128}   %007F80
@@ -61,6 +66,24 @@
 \definecolor{CUHKmiddle}{RGB}{144,44,144} %902C90
 \definecolor{CUHKlight}{RGB}{167,44,167} 
 
+% ==== Local new commands
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calKL}{\mathcal{KL}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\renewcommand{\vec}[1]{\boldsymbol{#1}}    % re-define vec command
+\DeclareMathOperator*{\argmin}{argmin}
+
+
+% =============================================================
+%              page size setting (in normal mode)
+% =============================================================
+\setlength{\columnsep}{16pt}                               % set space between columns
 % =============================================================
 %                   Theorem Definitions
 % =============================================================
@@ -72,7 +95,8 @@
 \newtheorem{myclaim}{\textbf{Claim}}
 \newtheorem{myapplication}{\textbf{Application}}
 \newtheorem{myexample}{\textbf{Example}}
-\newtheorem{myconjecture}{Conjecture}
+\newtheorem{myconjecture}{\textbf{Conjecture}}
+\newtheorem{myassumption}{Assumption}
 \newtheorem{myprop}{Property}
 
 \algrenewcommand\textproc{\texttt}
@@ -115,8 +139,17 @@
 %DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
 
 
+% =============================================================
+%          Local revision functions 
+% =============================================================
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+\newcommand{\revise}[1]{\DIFadd{#1}}
+
 % ==== Logs:
 %
+%  01/2020: todo & revise functions
+%  02/2019: vec commend
+%  10/2018: captionsetup: remove ":" in caption; eucal package
 %  09/2016: captionsetup, columnsep
 %  07/2016: support to pgfplots
 %  07/2016: threeparttable

@@ -1,0 +1,88 @@
+% =============================================================
+%         Setting for ACM 2017 format
+%
+%   Author      : Bei Yu
+%   Last Update : 04/2018
+% =============================================================
+
+\settopmatter{printacmref=false}          % no ACM Reference Format
+\fancyhead{}                              % no header
+
+% ==== page margin settings
+\geometry{twoside=true, head=13pt,
+	paperwidth=8.5in, paperheight=11in,
+	includeheadfoot, columnsep=2pc,
+	top=57pt, bottom=73pt, inner=54pt, outer=54pt,
+	marginparwidth=2pc,heightrounded
+}%
+\iffalse
+\textfloatsep          = 10pt plus 1pt minus 7pt           % set space between figure and text
+\floatsep              =  4pt plus 1pt minus 7pt
+\fi
+%\intextsep             = 0pt plus 1pt minus 7pt           % set space above and below the texts
+%\dbltextfloatsep       = 0pt plus 1pt minus 7pt
+%\dblfloatsep           = 0pt plus 1pt minus 7pt
+%\abovedisplayskip      = 0pt plus 1pt minus 7pt           % set space around equations
+%\belowdisplayskip      = 0pt plus 1pt minus 7pt
+%\abovedisplayshortskip = 0pt plus 1pt minus 7pt
+%\belowdisplayshortskip = 0pt plus 1pt minus 7pt
+
+% ==== Packages
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage[subrefformat=parens,labelformat=parens]{subfig}
+\captionsetup[subfigure]{labelformat=simple}               % avoid "double brackets" in sub-figure caption
+\renewcommand\thesubfigure{(\alph{subfigure})}             % "Fig.~1b"-->"Fig.1(b)"
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage{threeparttable,booktabs}
+\usepackage{blkarray}
+\usepackage{tikz}
+\usepackage{balance}
+\usepackage{courier}                                       % courier font, used in \texttt
+\usepackage{cleveref}                                      % smart citation
+\usepackage[mathcal]{eucal}
+\usepackage[]{algpseudocode}                               % algorithm package
+%\usepackage[noend]{algpseudocode}
+\algrenewcommand\textproc{\texttt}
+\makeatletter\let\float@addtolists\relax\makeatother
+\usepackage{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:} }       % Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure} {\textbf{Output:}}       % Use Output in the format of Algorithm
+\usepackage{filecontents}                                  % support to pgfplots
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+%\usepackage{rotating} 
+\usepackage[figuresright]{rotating}
+
+
+% ==== Local new commands
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\DeclareMathOperator*{\argmin}{argmin}
+
+\theoremstyle{plain}
+\newtheorem{mytheorem}{\textbf{Theorem}}
+\newtheorem{mylemma}{\textbf{Lemma}}
+\newtheorem{myclaim}{\textbf{Claim}}
+
+\theoremstyle{definition}
+\newtheorem{mydefinition}{\textbf{Definition}}
+\newtheorem{myproblem}{\textbf{Problem}}
+
+
+
+% ==== spacing control on caption
+\usepackage[skip=1pt]{caption}            % set space between figure and caption
+\setlength{\belowcaptionskip}{-1.0mm}
+\captionsetup[table]{aboveskip=5pt}       % reduce space around table caption
+\captionsetup[table]{belowskip=2pt}

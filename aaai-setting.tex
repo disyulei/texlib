@@ -1,0 +1,110 @@
+% =============================================================
+%         Setting for AAAI format
+%
+%   Author      : Bei Yu
+%   Last Update : 08/2018
+% =============================================================
+\usepackage{times}                % Required
+\usepackage{helvet}               % Required
+\usepackage{courier}              % Required
+\usepackage{url}                  % Required
+\usepackage{graphicx}             % Required
+\frenchspacing                    % Required
+\setlength{\pdfpagewidth}{8.5in}  % Required
+\setlength{\pdfpageheight}{11in}  % Required
+
+
+% ===== some settings that may be illegal
+\iftrue
+\usepackage[colorlinks]{hyperref}
+\hypersetup{
+    pageanchor=false,
+    linkcolor=blue,
+    anchorcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    plainpages=false,
+    hypertexnames=false,          % hyperref - pdftex warning (ext4) destination with same identifier
+}
+\fi
+
+
+% =============================================================
+%                 AAAI Local definitions 
+% =============================================================
+\usepackage{color}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{cleveref}
+%\usepackage[subrefformat=parens,farskip=0pt,justification=centering]{subfig}
+\usepackage{subfig}
+\captionsetup[subfigure]{labelformat=simple}               % avoid "double brackets" in sub-figure caption
+\renewcommand\thesubfigure{(\alph{subfigure})}             % "Fig.~1b"-->"Fig.1(b)"
+\usepackage{algpseudocode}                                 % new algorithm package
+\usepackage{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:} }       % Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure} {\textbf{Output:}}       % Use Output in the format of Algorithm
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+\usepackage{filecontents}
+\usepackage{multirow}
+\usepackage[flushleft]{threeparttable}
+\usepackage{bm}
+\usepackage{booktabs}             % professional-quality tables
+\usepackage{textcomp}             % for degree symbol
+\usepackage{balance}
+
+
+% ignore overwrite file warning
+% https://tex.stackexchange.com/questions/402962/overwriting-file-warning
+\usepackage{silence}
+\WarningFilter{latex}{Overwriting file}
+
+
+% fix "pdflinked" error: https://github.com/ho-tex/hyperref/issues/19
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\@combinedblfloats{\box\@outputbox}{\unvbox\@outputbox}{}{%
+   \errmessage{\noexpand\@combinedblfloats could not be patched}%
+}%
+\makeatother
+
+% fix "Multiple PDFs with page group included in a single page" warning
+% https://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
+\pdfsuppresswarningpagegroup=1
+
+
+% ==== Local new commands
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\m}[1]{\mathbf{#1}}
+
+% ==== Theorem Definitions
+\newtheorem{myproblem}{\textbf{Problem}}
+\newtheorem{myassumption}{\textbf{Assumption}}
+\newtheorem{mydefinition}{\textbf{Definition}}
+\newtheorem{mytheorem}{\textbf{Theorem}}
+\newtheorem{mycorollary}{\textbf{Corollary}}
+\newtheorem{mylemma}{\textbf{Lemma}}
+\newtheorem{myclaim}{\textbf{Claim}}
+\newtheorem{myapplication}{\textbf{Application}}
+\newtheorem{myexample}{\textbf{Example}}
+\newtheorem{myconjecture}{Conjecture}
+\newtheorem{myprop}{Property}
+
+% ==== color definitions
+\definecolor{myorange}{RGB}{238,97,42}  %
+\definecolor{myblue}{RGB}{178,179,249}  %A2A0FE
+\definecolor{mygrey}{RGB}{166,166,166}  %
+\definecolor{mygreen}{RGB}{180,210,36}  %B4D224
+\definecolor{myred}{RGB}{238,0,0}       %EE0000
+\definecolor{myyellow}{RGB}{198,148,34} %C69422
+\definecolor{mydark}{RGB}{114,44,114}   %722C72
+\definecolor{mymiddle}{RGB}{144,44,144} %902C90
+\definecolor{mylight}{RGB}{167,44,167}  %A72CA7
+
+

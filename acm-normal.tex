@@ -15,6 +15,11 @@
 \captionsetup[table]{aboveskip=0pt}                        % reduce space around table caption
 \captionsetup[table]{belowskip=6pt}
 \usepackage{enumitem}                                      % item spacing
+\paperwidth   = 8.5in                                      % US Letter page size
+\paperheight  = 11.0in
+%\paperwidth  = 8.26in                                     % A4 page size
+%\paperheight = 11.69in
+\usepackage[top=0.66in,bottom=0.66in,left=0.60in,right=0.60in]{geometry}
 
 
 % =============================================================
@@ -57,6 +62,7 @@
     linkcolor  = blue,
 	urlcolor   = blue,
 }
+\usepackage{cleveref}
 \usepackage{filecontents}                                  % support to pgfplots
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}

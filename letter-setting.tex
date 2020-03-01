@@ -19,6 +19,7 @@
 \usepackage{charter}         % Charter font for main content
 \usepackage{graphicx}        % Required for including images
 \usepackage{amssymb,amsmath} % Math packages
+\usepackage{amsthm}          % Definition
 \usepackage{multicol}        % Required for the three-column layout of the document
 \usepackage{url}             % Clickable links
 \usepackage{enumitem}        % Reduces the amount of space within and between lists with [noitemsep,nolistsep]
@@ -31,6 +32,18 @@
 \pagestyle{fancy}            % Enables the custom headers/footers for all pages following this
 \newdateformat{mydate}{\monthname[\THEMONTH] \THEYEAR}          % Set a custom date format
 \usepackage[pdfpagemode=FullScreen, colorlinks=false]{hyperref} % Link colors and PDF behavior in Acrobat
+\usepackage{booktabs}        % toprule, midrule, and bottomrule
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{hyperref}                                      %
+\hypersetup{
+    colorlinks = true,
+    citecolor  = blue,
+    linkcolor  = blue,
+    urlcolor   = blue
+}
 
 
 % =====================================================
