@@ -3,11 +3,30 @@
 %          beamer slides setting
 %
 %   Author      : Bei Yu
-%   Last Update : 09/2018
+%   Last Update : 03/2021
 % ===============================================
 
 \setbeamerfont{frametitle}{size=\LARGE}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand\blfootnote[1]{                          % footnote without index
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}        %
+    \addtocounter{footnote}{-1}                     %
+    \endgroup
+}
+\usepackage{pifont}
+\usepackage{pgfplotstable}
+\usetikzlibrary{arrows,calc,shapes,fit,arrows.meta,positioning}
+\newcommand{\xmark}{\ding{56}}  % define xmark
+
+
+% ==================================================
+%           font size settings 
+% ==================================================
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\small}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\footnotesize}
+
 
 % =============================================
 %            Specify colors
@@ -24,7 +43,7 @@
 \definecolor{CUHKorange}{RGB}{244,106,18} %F47012
 \definecolor{CUHKblue}{RGB}{0,111,190}    %006FBE
 \definecolor{CUHKgreen}{RGB}{0,127,128}   %007F80
-\definecolor{CUHKred}{RGB}{228,46,36}     %E42E24
+\definecolor{CUHKred}{RGB}{118,20,12}     %76140C
 \definecolor{CUHKyellow}{RGB}{198,148,34} %C69422
 \definecolor{CUHKdark}{RGB}{114,44,114}   %722C72
 \definecolor{CUHKmiddle}{RGB}{144,44,144} %902C90
@@ -33,7 +52,7 @@
 \setbeamercolor{alerted text}{fg=CUHKorange}
 
 % ==== packages
-%\usepackage{bm}
+\usepackage{bm}
 \usepackage{algpseudocode}           % for algorithm
 \usepackage{algorithm}
 \usepackage{pgfpages}                % allow note printing
@@ -44,32 +63,25 @@
 \usepackage{subfig}
 \usepackage{filecontents}
 \usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
 \usepackage{graphicx}
+\usepackage{threeparttable}
 \usepackage{caption}
 \usepackage{tikz}
 \usepackage{tikzscale}
 %\captionsetup[figure]{font=scriptsize,textfont={color=CUHKgreen},labelformat=empty}
 \captionsetup[figure]{font=footnotesize,labelformat=empty}
 \usepackage[english]{babel}
-\usepackage{wasysym}                           % smiling face
-\usepackage{animate}                           % animation 
-\usefonttheme[onlymath]{serif}                 % 
-\usepackage{etoolbox}                          % commands \newtoggle, \toggletrue, \iftoggle
-\usepackage{courier}                           % courier font, used in \texttt
+\usepackage{wasysym}                 % smiling face
+\usepackage{animate}                 % animation 
+\usepackage{etoolbox}                % commands \newtoggle, \toggletrue, \iftoggle
+\usepackage{courier}                 % courier font, used in \texttt
+\usepackage{eso-pic}                 % for top-right logo
 \usepackage{soul}
-\usepackage{booktabs}                          % toprule bottomrule
-\usepackage{listings}                          % typeset source code listings
-\usepackage{perpage}                           % reset footnote index every page
-\MakePerPage{footnote}                         %
-\renewcommand{\thefootnote}{\arabic{footnote}} % footnote index in Arabic numerals
-\renewcommand{\footnotesize}{\scriptsize}
-\newcommand\blfootnote[1]{                     % define blfootnote function
-    \begingroup
-    \renewcommand\thefootnote{}\footnote{#1}
-    \addtocounter{footnote}{-1}
-    \endgroup
-}
-\usepackage{pifont} \newcommand{\xmark}{\ding{56}} % define xmark
+\usepackage{booktabs}                % toprule bottomrule
+\usepackage{pdfpages}
+\usepackage{blkarray}
+\usepackage{listings}                % typeset source code listings
 \lstset{basicstyle=\ttfamily,breaklines=true}
 \lstdefinestyle{scriptsize}
 {
@@ -95,6 +107,15 @@
     linkcolor  = CUHKgreen,
 }
 
+% === only used for Chinese slides
+\iffalse
+\usepackage[UTF8]{ctex}
+\usefonttheme{professionalfonts}     % 数学公式字体
+%\usefonttheme{serif}                % 使用衬线字体
+\usefonttheme{structureitalicserif}              
+\fi
+% === only used for English slides
+\usefonttheme[onlymath]{serif}       % 
 
 % =============================================
 %         Specify some local functions
@@ -104,7 +125,13 @@
 \newcommand{\calP}{\mathcal{P}}
 \newcommand{\calNP}{\mathcal{NP}}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{mytheorem}{\textbf{Theorem}}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
 
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1}]}
+\newcommand{\revise}[1]{\textcolor{blue}{#1}}
+\newcommand{\mycite}[1]{\textcolor{CUHKgreen}{[#1]}}
 
 % Fix caption package bug
 % https://tex.stackexchange.com/questions/426088/texlive-pretest-2018-beamer-and-subfig-collide
@@ -115,7 +142,7 @@
 
 % Fix UTF-8 encoding problem
 % https://tex.stackexchange.com/questions/429190/package-inputenc-error-invalid-utf-8-byte-147
-\UseRawInputEncoding
+% \UseRawInputEncoding
 
 % ======================================================
 %             Slides theme
@@ -159,6 +186,7 @@
   \setlength{\textwidth}{#1}
   \setbeamercolor{block title}{fg=white,bg=CUHKblue}
   \setbeamercolor{block body}{fg=black,bg=blue!10}
+  \setbeamerfont{block body}{size=\small}
   \begin{actionenv}#3%
   \def\insertblocktitle{#2}%
   \par%
@@ -172,7 +200,7 @@
 \newenvironment<>{qblock}[2][\textwidth]{%
   \setlength{\textwidth}{#1}
   \setbeamercolor{block title}{fg=black,bg=CUHKyellow!40}
-  \setbeamercolor{block body}{fg=black,bg=yellow!6}
+  \setbeamercolor{block body}{fg=black,bg=yellow!2}
   \begin{actionenv}#3%
   \def\insertblocktitle{#2}%
   \par%
@@ -187,6 +215,9 @@
 \setbeamerfont{block title alerted}{size=\large}
 \setbeamercolor{block title}{fg=CUHKorange}
 \setbeamercolor{block title alerted}{fg=CUHKblue}
+\setbeamerfont{block body}{size=\small}
+\setbeamerfont{block body alerted}{size=\small}
+\setbeamerfont{block body example}{size=\small}
 
 
 % ==================================================
@@ -234,7 +265,8 @@
 %\beamertemplateshadingbackground{white}{white}
 
 % ==== Log
-%
+%  01/2021: chinese font settings
+%  01/2021: update block body font size
 %  09/2018: add some local functions
 %  06/2016: fix bug from caption package
 %  11/2016: block settings

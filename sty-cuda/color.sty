@@ -1,0 +1,103 @@
+\mode<presentation>
+
+% CUHK theme colors
+%\definecolor{UniBrown}{RGB}{72,57,32}
+%\definecolor{UniOrange}{RGB}{239,125,45}
+%\definecolor{UniBlue}{RGB}{119,154,171}
+%\definecolor{UniGold}{RGB}{167,145,105}
+\definecolor{CUHKyellow}{RGB}{198,148,34} %C69422
+\definecolor{CUHKdark}{RGB}{114,44,114}   %722C72
+\definecolor{CUHKlight}{RGB}{167,44,167}  %A72CA7
+\definecolor{CUHKblue}{RGB}{0,111,190}    %006FBE
+\definecolor{CUHKgreen}{RGB}{0,127,128}   %007F80
+\definecolor{CUHKorange}{RGB}{244,106,18} %F47012
+\definecolor{CUHKred}{RGB}{118,20,12}     %76140C
+\setbeamercolor{structure}{fg=CUHKblue}
+\setbeamercolor{alerted text}{fg=CUHKorange}
+
+% Normal text
+\setbeamercolor{normal text}{fg=black}
+
+% First page
+\setbeamercolor*{title}{fg=CUHKdark,bg=gray}
+\setbeamercolor*{author}{fg=CUHKblue,bg=gray}
+\setbeamercolor*{date}{fg=CUHKgreen,bg=gray}
+
+% Generic frames header and footer
+\setbeamercolor{titlelike}{fg=black}
+\setbeamercolor{frametitle}{fg=white}
+\setbeamercolor{framesubtitle}{fg=white}
+\setbeamercolor{title in head/foot}{fg=CUHKdark}
+\setbeamercolor{author in head/foot}{fg=CUHKdark}
+\setbeamercolor{background canvas}{bg=}
+
+%Blocks
+\setbeamercolor{block title}{bg=CUHKblue,fg=black}
+\setbeamercolor{block title example}{bg=ForestGreen!30,fg=black}
+\setbeamercolor{block title alerted}{bg=red!30,fg=black}
+\setbeamercolor{block body}{bg=CUHKdark!5,fg=black}
+\setbeamercolor{block body alerted}{bg=Red!5,fg=black}
+\setbeamercolor{block body example}{bg=ForestGreen!5,fg=black}
+% === block font size
+\setbeamerfont{block title}{size=\large}
+\setbeamerfont{block title example}{size=\large}
+\setbeamerfont{block title alerted}{size=\large}
+\setbeamerfont{block body}{size=\small}
+\setbeamerfont{block body example}{size=\small}
+\setbeamerfont{block body alerted}{size=\small}
+
+% ========================================
+%          New blocks
+% ========================================
+% varblock
+\newenvironment<>{varblock}[2][\textwidth]{%
+  \setlength{\textwidth}{#1}
+  \setbeamercolor{block title}{fg=white,bg=CUHKblue}
+  \setbeamercolor{block body}{fg=black,bg=blue!10}
+  \setbeamerfont{block body}{size=\small}
+  \begin{actionenv}#3%
+  \def\insertblocktitle{#2}%
+  \par%
+  \usebeamertemplate{block begin}}
+  {
+    \par%
+    \usebeamertemplate{block end}%
+    \end{actionenv}
+  }
+% question block 
+\newenvironment<>{qblock}[2][\textwidth]{%
+  \setlength{\textwidth}{#1}
+  \setbeamercolor{block title}{fg=black,bg=CUHKyellow!40}
+  \setbeamercolor{block body}{fg=black,bg=yellow!2}
+  \begin{actionenv}#3%
+  \def\insertblocktitle{#2}%
+  \par%
+  \usebeamertemplate{block begin}}
+  {
+    \par%
+    \usebeamertemplate{block end}%
+    \end{actionenv}
+  }
+
+% Lists
+\setbeamercolor*{item}{fg=CUHKyellow}
+
+% Quotation and quote
+\setbeamercolor*{quotation}{fg=black,bg=MidnightBlue!5}
+
+% Verse
+\setbeamercolor*{verse}{fg=black,bg=MidnightBlue!5}
+
+% Abstract
+\setbeamercolor*{abstract}{fg=black,bg=MidnightBlue!5}
+
+
+% Bibliography
+\setbeamercolor*{bibliography entry title}{fg=black}
+\setbeamercolor*{bibliography entry author}{fg=black}
+\setbeamercolor*{bibliography entry location}{fg=black!50}
+\setbeamercolor*{bibliography entry note}{fg=black!50}
+
+
+\mode
+<all>

@@ -1,0 +1,91 @@
+% =============================================================
+%         Setting for CV papers
+%
+%   Author      : Bei Yu
+%   Last Update : 11/2021
+% =============================================================
+
+% === comment out for ICCV, but used for CVPR
+\makeatletter
+\@namedef{ver@everyshi.sty}{}
+\makeatother
+
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage[mathcal]{eucal}                                % charp math font
+%\usepackage{subfig}                                       % conflict with subcaption so removed from CVPR22
+\captionsetup[subfigure]{labelformat=simple}               % avoid "double brackets" in sub-figure caption
+\renewcommand\thesubfigure{(\alph{subfigure})}             % "Fig.~1b"-->"Fig.1(b)"
+%\usepackage[colorlinks]{hyperref}
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+\hypersetup{
+    pageanchor=false,
+    linkcolor=blue,
+    anchorcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    plainpages=false,
+}
+\usepackage{cleveref}
+%\usepackage{floatrow}
+\usepackage{caption}
+\usepackage{algpseudocode}                            % new algorithm package
+\usepackage{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:} }  % Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure} {\textbf{Output:}}  % Use Output in the format of Algorithm
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+\usepackage{filecontents}
+\usepackage{booktabs}                                 % professional-quality tables
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage[flushleft]{threeparttable}
+\usepackage{bm}
+\usepackage{textcomp}                                 % for degree symbol
+\usepackage{enumitem}
+\usepackage{setspace}                                 % setstretch command
+
+\iffalse
+\setlength{\textfloatsep}{10pt plus 1pt minus 1pt}    % set space between float and text
+\setlength{\floatsep}{10pt plus 1pt minus 1pt}        % set space between two floats
+\setlength{\intextsep}{4pt plus 1pt minus 1pt}        % set space between text and float
+\setlength{\columnsep}{16pt}                          % set space between columns
+% ==== reduce space around equations
+\setlength{\belowdisplayskip}{2pt} \setlength{\belowdisplayshortskip}{2pt}
+\setlength{\abovedisplayskip}{2pt} \setlength{\abovedisplayshortskip}{2pt}
+\fi
+
+
+% ==== Local new commands
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\tensor}[1]{\boldsymbol{\mathcal{#1}} }    % tensor 
+\renewcommand{\vec}[1]{\boldsymbol{#1}}                % re-define vec command
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+
+% ==== Theorem Definitions
+\newtheorem{myproblem}{\textbf{Problem}}
+\newtheorem{myassumption}{\textbf{Assumption}}
+\newtheorem{mydefinition}{\textbf{Definition}}
+\newtheorem{mytheorem}{\textbf{Theorem}}
+\newtheorem{mycorollary}{\textbf{Corollary}}
+\newtheorem{mylemma}{\textbf{Lemma}}
+\newtheorem{myclaim}{\textbf{Claim}}
+\newtheorem{myapplication}{\textbf{Application}}
+\newtheorem{myexample}{\textbf{Example}}
+\newtheorem{myconjecture}{Conjecture}
+\newtheorem{myprop}{Property}
+
+
+

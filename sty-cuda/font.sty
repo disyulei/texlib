@@ -1,0 +1,32 @@
+% Maths
+\usefonttheme{serif}
+
+% general font
+\renewcommand*\rmdefault{ppl}
+% monospaced
+\renewcommand*\ttdefault{lmvtt} % Latin Modern Mono Proportional Font
+\usepackage[T1]{fontenc}
+
+% Font sizes
+\setbeamerfont{title}{size=\Huge}
+\setbeamerfont{frametitle}{size=\Large}
+\setbeamerfont{framesubtitle}{size=\normalsize}
+\setbeamerfont{title in head/foot}{size=\footnotesize}
+\setbeamerfont{author in head/foot}{size=\footnotesize}
+
+\setbeamerfont*{bibliography entry author}{series=\bfseries}
+\setbeamerfont*{bibliography entry title}{series=\bfseries}
+\setbeamerfont*{description item}{series=\bfseries}
+
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\small}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\footnotesize}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\newcommand\blfootnote[1]{                          % footnote without index
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}        %
+    \addtocounter{footnote}{-1}                     %
+    \endgroup
+}
+

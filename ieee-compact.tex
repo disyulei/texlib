@@ -2,10 +2,10 @@
 %         setting for IEEE format paper (compact mode)
 %
 %   Author      : Bei Yu
-%   Last Update : 01/2020
+%   Last Update : 11/2021
 % =============================================================
 
-
+\usepackage{blkarray}                                      % to support matrix
 %\usepackage[noend]{algpseudocode}
 \usepackage{algpseudocode}                                 % new algorithm package
 \usepackage{algorithm}
@@ -15,7 +15,9 @@
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage[mathcal]{eucal}
+\usepackage{mathrsfs}
 \usepackage{booktabs}
+\usepackage{enumerate}
 \usepackage{multirow}
 \usepackage[subrefformat=parens,farskip=0pt,justification=centering]{subfig}
 \captionsetup[subfigure]{labelformat=simple}               % avoid "double brackets" in sub-figure caption
@@ -42,10 +44,13 @@
     urlcolor   = blue,
 }
 \usepackage{tikz}
-\usetikzlibrary{positioning, fit}
+\usetikzlibrary{positioning,calc,fit,decorations.pathmorphing,shapes.geometric, shapes.gates.logic.US, calc}
+\usetikzlibrary{arrows,arrows.meta,decorations.markings,shapes,shapes.arrows}
+\usetikzlibrary{backgrounds}
 \usepackage{filecontents}                                  % support to pgfplots
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
+\usepackage{scalefnt}
 \pgfplotsset{compat=newest}
 \usepackage{caption}
 \usepackage{cleveref}
@@ -65,16 +70,43 @@
 \definecolor{CUHKdark}{RGB}{114,44,114}   %722C72
 \definecolor{CUHKmiddle}{RGB}{144,44,144} %902C90
 \definecolor{CUHKlight}{RGB}{167,44,167} 
+\definecolor{CUHKpurple}{RGB}{117,15,109}
+\definecolor{CUHKgold}{RGB}{221,163,0}
+\definecolor{CUHKribbon}{RGB}{244,223,176}
+\definecolor{CUHKblack}{RGB}{34,24,21}
 
 % ==== Local new commands
 \newcommand{\calH}{\mathcal{H}}
+\newcommand{\calL}{\mathcal{L}}
 \newcommand{\calN}{\mathcal{N}}
 \newcommand{\calO}{\mathcal{O}}
 \newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
 \newcommand{\calV}{\mathcal{V}}
+\newcommand{\calKL}{\mathcal{KL}}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \renewcommand{\vec}[1]{\boldsymbol{#1}}    % re-define vec command
+\newcommand{\mathbbm}[1]{\text{\usefont{U}{bbm}{m}{n}#1}}
 \DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\newcommand\blfootnote[1]{                 % footnote w/o. label
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+
+% === beamer style block
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\newenvironment{myblock}[1]{%
+    \tcolorbox[beamer,%
+    noparskip,breakable,
+    colback=white,colframe=CUHKmiddle,%
+    colbacklower=white,%
+    title=#1]}%
+    {\endtcolorbox}
 
 
 % =============================================================
@@ -88,6 +120,8 @@
 \setlength{\textfloatsep}{10pt plus 1pt minus 1pt}         % set space between float and text
 \setlength{\floatsep}{10pt plus 1pt minus 1pt}             % set space between two floats
 \setlength{\intextsep}{4pt plus 1pt minus 1pt}             % set space between text and float
+\setlength{\abovecaptionskip}{2pt}                         % set space between figure and caption
+\setlength{\belowcaptionskip}{2pt}                         % set space between figure and caption
 \setlength{\columnsep}{14pt}                               % set space between columns
 % ==== reduce space around equations
 \setlength{\belowdisplayskip}{4pt} \setlength{\belowdisplayshortskip}{4pt}
@@ -110,7 +144,8 @@
 \newtheorem{myclaim}{\textbf{Claim}}
 \newtheorem{myapplication}{\textbf{Application}}
 \newtheorem{myexample}{\textbf{Example}}
-\newtheorem{myconjecture}{Conjecture}
+\newtheorem{myconjecture}{\textbf{Conjecture}}
+\newtheorem{myassumption}{Assumption}
 \newtheorem{myprop}{Property}
 
 \algrenewcommand\textproc{\texttt}
@@ -156,11 +191,12 @@
 % =============================================================
 %          Local revision functions 
 % =============================================================
-\newcommand{\todo}[1]{\textcolor{red}{#1}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
 \newcommand{\revise}[1]{\DIFadd{#1}}
 
 % ==== Logs:
 %
+%  05/2021: beamer style block
 %  01/2020: todo & revise functions
 %  02/2019: vec commend
 %  10/2018: captionsetup: remove ":" in caption; eucal package

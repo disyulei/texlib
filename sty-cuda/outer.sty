@@ -1,0 +1,73 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{uniud}[1][]
+{
+
+\begin{tikzpicture}
+\useasboundingbox (0,-0.05) rectangle(\the\paperwidth,0.95);
+
+% Two-colored line
+ \fill[color=CUHKyellow] (-1,0) rectangle(0,1);
+ %\fill[color=CUHKyellow] (0,0) rectangle(1,1);
+ \fill[color=CUHKdark] (0,0) rectangle(\the\paperwidth,1);
+ 
+ % Logo in the last box
+ \node[inner sep=0pt] (logo) at (14.5,0.5){\includegraphics[width=0.85cm]{figs/logo-cuhk}};
+\end{tikzpicture}
+
+% If we don't have a subtitle, put the title
+% at the center of the header
+\ifx\insertframesubtitle\@empty
+
+  \begin{textblock*}{16cm}(1.2cm,0.3cm)
+  {\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle}
+  \end{textblock*}
+
+\else
+% If we have both title and subtitle, stack them
+  \begin{textblock*}{16cm}(1.2cm,0.1cm)
+  {\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle}
+  \end{textblock*}
+
+  \begin{textblock*}{12cm}(1.2cm,0.6cm)
+  {\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle}
+  \end{textblock*}
+
+\fi
+
+}
+
+% Frame footer
+\setbeamertemplate{footline}
+{
+\ifnum\thepage>1
+
+%\begin{tikzpicture}
+%\useasboundingbox (0,0) rectangle(\the\paperwidth,1);
+%
+%% Three-colored line
+%\fill[color=CUHKorange] (0,1.25) rectangle(1,1.3);
+%\fill[color=CUHKblue] (1,1.25) rectangle(2,1.3);
+%\fill[color=CUHKdark] (2,1.25) rectangle(\the\paperwidth,1.3);
+%\end{tikzpicture}
+
+%\begin{textblock*}{0.9cm}(0.1cm,\dimexpr\the\paperheight-0.3cm)
+\begin{textblock*}{0.9cm}(\dimexpr\the\paperwidth-1.1cm, \dimexpr\the\paperheight-0.4cm)
+\raggedleft
+{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertframenumber/\inserttotalframenumber}
+\end{textblock*}
+
+%\begin{textblock*}{3cm}(2cm,\dimexpr\the\paperheight-0.3cm)
+%{\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor}
+%\end{textblock*}
+%
+%\begin{textblock*}{7cm}(\dimexpr\the\paperwidth-7.8cm,\dimexpr\the\paperheight-0.3cm) 
+%\raggedleft
+%{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertshorttitle}
+%\end{textblock*}
+
+\fi % \ifnum\thepage>1
+}
+
+\mode<all>
